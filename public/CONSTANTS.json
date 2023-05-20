@@ -1,0 +1,22 @@
+{
+    "name": "Flavorsome Delights",
+    "pages": [
+        {
+            "name": "Menus",
+            "url": "/menus"
+        },
+        {
+            "name": "Gift Cards",
+            "url": "/giftcards"
+        },
+        {
+            "name": "Delivery",
+            "url": "/delivery"
+        },
+        {
+            "name": "Contact",
+            "url": "/contact"
+        }
+    ],
+    "bookUrl": "/book"
+}
