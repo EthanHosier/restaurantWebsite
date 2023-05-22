@@ -41,13 +41,47 @@
             "link": "https://www.tripadvisor.com"
         }
     ],
-
-    "images":[
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-        "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-        "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=710&q=80",
-        "https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80"
+    "addresses": [
+        {
+            "area": "Sidcup,Bexley",
+            "address": "94 Station Road, Sidcup DA15 7DU",
+            "phone": "020 8302 0261",
+            "openingTimes": [
+                "Monday - Tuesday: 12pm-9pm",
+                "Wednesday - Sunday: 12pm-10pm"
+            ]
+        },
+        {
+            "area": "Hayes, Bromley",
+            "address": "34 Hayes Street, Bromley BR2 7LD",
+            "phone": "020 8462 2426",
+            "openingTimes": [
+                "Monday - Tuesday: 12pm-9pm",
+                "Wednesday - Sunday: 12pm-10pm"
+            ]
+        }
+    ],
+    "hashtag": "#TheTable",
+    "socialMediaLinks": [
+        {
+            "type": "facebook",
+            "url": "https://facebook.com"
+        },
+        {
+            "type": "instagram",
+            "url": "https://instagram.com"
+        },
+        {
+            "type": "tiktok",
+            "url": "https://tiktok.com"
+        },
+        {
+            "type": "twitter",
+            "url": "https://twitter.com"
+        }
+    ],
+    "emails": [
+        "bromley@thetable.com",
+        "sidcup@thetable.com"
     ]
 }

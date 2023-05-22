@@ -14,9 +14,8 @@ module.exports = {
       },
       colors:{
         primary:"#ffffff",
-        secondary:"#000000",
+        secondary:"#222222",
         accent:"#D74B15",
-        overlay:"#D9D9D9",
         tprimary:"#090721",
         tsecondary:"#F3F4EF"
       }

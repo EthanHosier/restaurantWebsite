@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Footer from '@/components/Footer'
 import DATA from "/public/CONSTANTS.json"
 import Bg1 from "/public/bg1.jpg"
 import Bg2 from "/public/bg2.jpg"
@@ -8,9 +9,18 @@ import Logo from "/public/logo.png"
 import GoogleLogo from "/public/google-logo.png";
 import TripadvisorLogo from "/public/tripadvisor-logo.png";
 import YelpLogo from "/public/yelp-logo.png"
-import { Dancing_Script } from 'next/font/google'
+import Img1 from "/public/img1.jpg"
+import Img2 from "/public/img2.jpg"
+import Img3 from "/public/img3.jpg"
+import Img4 from "/public/img4.jpg"
+import Img5 from "/public/img5.jpg"
+import Img6 from "/public/img6.jpg"
+import React from 'react'
+import iconsMap from '@/util/iconsMap'
+import { FaBeer } from 'react-icons/fa';
 
 const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
+const IMAGES = [Img1, Img2, Img3, Img4, Img5, Img6]
 
 import Link from 'next/link'
 
@@ -27,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* Brief info section */}
-      <section className='normal text-center flex flex-col px-4 py-16'>
+      <section className='normal text-center flex flex-col px-4 py-16 bg-primary'>
         <div className='max-w-6xl'>
           {DATA.h1 && <h2 className='text-2xl font-bold mb-4'>{DATA.h1}</h2>}
           {DATA.p1 && <p className='mb-8'>{DATA.p1}</p>}
@@ -49,7 +59,7 @@ export default function Home() {
       </section>
 
       {/* Reviews section */}
-      <section className='normal text-center flex'>
+      <section className='normal text-center flex bg-primary'>
         <div className='max-w-6xl flex flex-col sm:flex-row gap-y-16'>
           {DATA.reviews.map((d, i) => (
             <div className='flex flex-col items-center justify-center flex-1'>
@@ -67,18 +77,44 @@ export default function Home() {
       {/* Extra parallax image section */}
       <section className='parallax' id='extra-parallax-image'>
         <Image src={Bg3} width={0} height={0} className="background" />
-        <div className='bg-black background opacity-20'>{DATA.slogan}</div>
-        <h1 className='text-tsecondary'>{DATA.slogan}</h1>
+        <div className='bg-black background opacity-20' />
+        <h1 className='text-tsecondary text-center'>{DATA.slogan}</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
       </section>
 
 
       {/*Images section*/}
-      <section className='normal'>
-          <div className='flex-wrap'>
-            
-          </div>  
+      <section className='normal justify-center bg-primary'>
+        <div className='flex-wrap flex justify-center gap-2'>
+          {IMAGES.map((img, i) => (
+            <Image src={img} width={0} height={0} className="w-1/4 aspect-square object-cover" />
+          ))}
+        </div>
       </section>
+
+      {/* Connect with us section */}
+      <section className='normal' id="connect-with-us">
+        <Image src={Bg4} width={0} height={0} className="background" />
+        <div className='h-full w-full absolute bg-black opacity-50 background '></div>
+
+        <div className='flex flex-col'>
+          <h2 className='text-xl text-tsecondary'>Connect with us</h2>
+          <div className='flex justify-between mt-4'>
+            {DATA.socialMediaLinks.map((link, i) => {
+              const { type, url } = link;
+              const IconComponent = iconsMap[type];
+
+              return (
+                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
+                  <IconComponent className="text-tsecondary"/>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   )
 }
@@ -102,9 +138,5 @@ const pickupDeliveryBtn = ({ type }) => {
         
 </section>
 
-<section className='normal' id="connect-with-us">
-  <Image src={Bg4} width={0} height={0} className="background" />
-  <div className='h-full w-full absolute bg-overlay opacity-75 background '></div>
-  <h2 className='text-xl text-tprimary'>Connect with us</h2>
-</section>
+
 */

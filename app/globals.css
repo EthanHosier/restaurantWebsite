@@ -25,7 +25,7 @@
 }
 
 #connect-with-us{
-  height: 50vh;
+  height: 30vh;
 }
 
 .parallax > .background {
@@ -51,12 +51,11 @@
 
 .normal{
   width: 100%;
-  background: #fff;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
   text-align: center;
   padding-left: 16px;
   padding-right: 16px;
@@ -64,6 +63,10 @@
   padding-bottom: 64px;
 }
 
+footer{
+  padding-top: 24px !important;
+  padding-bottom: 16px !important;
+}
 
 .parallax:nth-child(1){
   text-align:left;
