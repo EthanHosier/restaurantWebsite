@@ -15,9 +15,10 @@ module.exports = {
       colors:{
         primary:"#ffffff",
         secondary:"#000000",
-        accent:"#52071B",
-        w: "#F3F4EF",
-        b: "#090721"
+        accent:"#D74B15",
+        overlay:"#D9D9D9",
+        tprimary:"#090721",
+        tsecondary:"#F3F4EF"
       }
     },
   },

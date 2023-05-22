@@ -1,5 +1,6 @@
 {
-    "name": "Flavorsome Delights",
+    "name": "The Table",
+    "slogan": "A Culinary Symphony",
     "pages": [
         {
             "name": "Menus",
@@ -18,5 +19,35 @@
             "url": "/contact"
         }
     ],
-    "bookUrl": "/book"
+    "bookUrl": "/book",
+    "h1": "Welcome to The Table, your local Harvester Restaurant",
+    "p1": "Welcome to The Table. We believe in making the most of time with family and friends, and at The Table you can do just that while enjoying our famous rotisserie chicken and tucking into flavour filled dishes straight from the grill. Plus, don’t forget all our main meals come with fresh, unlimited salad. You can enjoy breakfast, lunch, dinner or order take-away from us, and we can’t wait to welcome you at The Table.",
+    "pickup": true,
+    "delivery": true,
+    "reviews": [
+        {
+            "source": "tripadvisor",
+            "text": "It surpassed all my expectations!",
+            "link": "https://www.tripadvisor.com"
+        },
+        {
+            "source": "google",
+            "text": "Best vegetarian restaurant... EVER",
+            "link": "https://www.google.com"
+        },
+        {
+            "source": "yelp",
+            "text": "Delicious food, good prices",
+            "link": "https://www.tripadvisor.com"
+        }
+    ],
+
+    "images":[
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=710&q=80",
+        "https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80"
+    ]
 }
