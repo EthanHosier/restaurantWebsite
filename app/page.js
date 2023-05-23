@@ -32,9 +32,11 @@ export default function Home() {
 
       {/* Logo Section */}
       <section className='parallax'>
-        <img src={DATA.backgrounds[0]} className="background" alt='logo section background'/>
-        <Image src={Logo} className="w-1/2" alt='logo'/>
+        <img src={DATA.backgrounds[0]} className="background" alt='logo section background' />
+        <div className='bg-black background opacity-10' />
+        <Image src={Logo} className="w-1/2" alt='logo' />
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
+
       </section>
 
       {/* Brief info section */}
@@ -43,20 +45,22 @@ export default function Home() {
           {DATA.h1 && <h2 className='text-2xl font-bold mb-4'>{DATA.h1}</h2>}
           {DATA.p1 && <p className='mb-8'>{DATA.p1}</p>}
           {DATA.bookUrl && BOOK_A_TABLE()}
+
         </div>
       </section>
 
       {/* (Pickup & delivery section) */}
-      <section className='normal h-2/3 flex-col'>
-      <img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image'/>
-        <div className='bg-black background opacity-20'>{DATA.slogan}</div>
-        <div className='flex flex-col md:justify-around  flex-1'>
+      <section className='normal h-2/3 flex-col' id='pickup-delivery'>
+        <img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image' />
+        <div className='bg-black opacity-20 background' />
+        <div className=' h-full flex flex-col md:justify-around'>
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
-          <div className='flex flex-col  max-w-6xl md:flex-row md:justify-between items-center mt-16 gap-8'>
+          <div className='flex flex-col max-w-6xl flex-1 md:flex-row justify-around md:justify-between items-center'>
             {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
             {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
           </div>
         </div>
+
       </section>
 
       {/* Reviews section */}
@@ -77,7 +81,7 @@ export default function Home() {
 
       {/* Extra parallax image section */}
       <section className='parallax' id='extra-parallax-image'>
-      <img src={DATA.backgrounds[2]} className="background" alt='extra booking section background'/>
+        <img src={DATA.backgrounds[2]} className="background" alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center'>{DATA.slogan}</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -88,32 +92,12 @@ export default function Home() {
       <section className='normal justify-center bg-primary'>
         <div className='flex-wrap flex justify-center gap-2'>
           {IMAGES.map((img, i) => (
-            <Image src={img} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`}/>
+            <Image src={img} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`} />
           ))}
         </div>
       </section>
 
-      {/* Connect with us section */}
-      <section className='normal' id="connect-with-us">
-      <img src={DATA.backgrounds[3]} className="background" alt='restaurant interior'/>
-        <div className='h-full w-full absolute bg-black opacity-50 background '></div>
-
-        <div className='flex flex-col'>
-          <h2 className='text-xl text-tsecondary'>Connect with us</h2>
-          <div className='flex justify-between mt-4'>
-            {DATA.socialMediaLinks.map((link, i) => {
-              const { type, url } = link;
-              const IconComponent = iconsMap[type];
-
-              return (
-                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
-                  <IconComponent className="text-tsecondary"/>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </main>
@@ -129,15 +113,25 @@ const BOOK_A_TABLE = () => {
 
 const pickupDeliveryBtn = ({ type }) => {
   return (
-    <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='bg-accent rounded text-tsecondary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44'>{type}</p></Link>
+    <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='bg-accent rounded text-tsecondary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64'>{type}</p></Link>
   )
 }
 
 
 /*
-<section className='normal text-center flex flex-col px-4 py-16 h-96'>
-        
+
+<section className='normal h-2/3 flex-col'>
+<img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image'/>
+  <div className='bg-black background opacity-20'>{DATA.slogan}</div>
+  <div className='flex flex-col md:justify-around flex-1 bg-red-200'>
+    {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
+    <div className='flex flex-col  max-w-6xl md:flex-row md:justify-between md:items-between items-center mt-16 gap-8 bg-yellow-200'>
+      {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
+      {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
+    </div>
+  </div>
 </section>
+
 
 
 */
