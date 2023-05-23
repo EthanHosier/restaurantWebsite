@@ -89,9 +89,11 @@
   transform: translateZ(0px);
 }
 
-#pickup-delivery{
-  padding-top: 128px;
-  padding-bottom: 128px;
+@media (min-width: 640px) {
+  #pickup-delivery {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
 }
 
 footer{
