@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import data from "/public/CONSTANTS.json"
+import DATA from "/public/CONSTANTS"
 import Link from "next/link";
 
 const Navbar = ({ isToggled }) => {
+    const items = DATA.pages;
 
     const navList = {
         visible: {
@@ -50,17 +51,18 @@ const Navbar = ({ isToggled }) => {
             >
                 <div className="flex flex-col items-center justify-center">
 
-                    {data.pages.map((p, i) => (
-                        <motion.li className="nav-item" variants={navItem} key={i}>
-                            <Link href={p.url}>
-                                <p className="text-4xl text-secondary my-4 uppercase">{p.name}</p>
-                            </Link>
-                        </motion.li>
-                    ))}
+                    <div className="mb-32">
+                        {items.map((item, i) => (
+                            <motion.li className="nav-item" variants={navItem} key={i}>
+                                <Link href={item.url}>
+                                    <p className="text-center text-3xl my-4 ">{item.name}</p>
+                                </Link>
+                            </motion.li>
+                        ))}
+                    </div>
+
                     <motion.li variants={navItem}>
-                        <div className="mt-96">
-                            <Link href={data.bookUrl}><span className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl mt-32">BOOK A TABLE</span></Link>
-                        </div>
+                        <Link href={DATA.bookUrl} className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl">BOOK A TABLE</Link>
                     </motion.li>
                 </div>
             </motion.ul>

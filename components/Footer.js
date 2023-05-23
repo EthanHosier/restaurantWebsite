@@ -22,7 +22,7 @@ const Footer = () => {
 
                 <div className='justify-start text-start text-xs md:text-sm'>
                     <p className='font-semibold'>{DATA.hashtag}</p>
-                    <div className='flex mt-1 mb-1'>
+                    <div className='flex mt-1 mb-1 gap-1'>
                         {DATA.socialMediaLinks.map((link, i) => {
                             const { type, url } = link;
                             const IconComponent = iconsMap[type];

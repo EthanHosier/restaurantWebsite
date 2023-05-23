@@ -24,6 +24,7 @@ const IMAGES = [Img1, Img2, Img3, Img4, Img5, Img6]
 
 import Link from 'next/link'
 
+
 export default function Home() {
 
   return (
@@ -31,8 +32,8 @@ export default function Home() {
 
       {/* Logo Section */}
       <section className='parallax'>
-        <Image src={Bg1} width={0} height={0} className="background" />
-        <Image src={Logo} width={0} height={0} className="w-1/2" />
+        <img src={DATA.backgrounds[0]} className="background" alt='logo section background'/>
+        <Image src={Logo} className="w-1/2" alt='logo'/>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
       </section>
 
@@ -47,7 +48,7 @@ export default function Home() {
 
       {/* (Pickup & delivery section) */}
       <section className='normal h-2/3 flex-col'>
-        <Image src={Bg2} width={0} height={0} className="background" />
+      <img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image'/>
         <div className='bg-black background opacity-20'>{DATA.slogan}</div>
         <div className='flex flex-col md:justify-around  flex-1'>
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
@@ -65,7 +66,7 @@ export default function Home() {
             <div className='flex flex-col items-center justify-center flex-1'>
               <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2'>
                 <Link href={d.link}>
-                  <Image src={LOGO_MAP[d.source]} className="w-full h-auto" />
+                  <Image src={LOGO_MAP[d.source]} className="w-full h-auto" alt={`${d.source} logo`} />
                 </Link>
               </div>
               <p>"{d.text}"</p>
@@ -76,7 +77,7 @@ export default function Home() {
 
       {/* Extra parallax image section */}
       <section className='parallax' id='extra-parallax-image'>
-        <Image src={Bg3} width={0} height={0} className="background" />
+      <img src={DATA.backgrounds[2]} className="background" alt='extra booking section background'/>
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center'>{DATA.slogan}</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -87,14 +88,14 @@ export default function Home() {
       <section className='normal justify-center bg-primary'>
         <div className='flex-wrap flex justify-center gap-2'>
           {IMAGES.map((img, i) => (
-            <Image src={img} width={0} height={0} className="w-1/4 aspect-square object-cover" />
+            <Image src={img} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`}/>
           ))}
         </div>
       </section>
 
       {/* Connect with us section */}
       <section className='normal' id="connect-with-us">
-        <Image src={Bg4} width={0} height={0} className="background" />
+      <img src={DATA.backgrounds[3]} className="background" alt='restaurant interior'/>
         <div className='h-full w-full absolute bg-black opacity-50 background '></div>
 
         <div className='flex flex-col'>

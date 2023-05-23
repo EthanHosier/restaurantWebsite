@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: turquoise; */
+}
+
+.navList {
+  padding: 100px 70px 200px 70px;
+}
+
+.nav-item {
+  list-style: none;
+  cursor: pointer;
+}
+
+
 .cont{
   height:100vh;
   perspective: 1px;
@@ -21,7 +46,7 @@
   display: flex;
   flex-direction: column;
   transform-style: preserve-3d;
-  transform: translateZ(0px); /* Add this line */
+  z-index: 1;
 }
 
 #connect-with-us{
@@ -61,6 +86,7 @@
   padding-right: 16px;
   padding-top: 64px;
   padding-bottom: 64px;
+  transform: translateZ(0px);
 }
 
 footer{
@@ -89,4 +115,3 @@ h1{
     font-size: 44px; /* Replace with your desired minimum font size for smaller viewports */
   }
 }
-

@@ -55,7 +55,7 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 left-0 w-screen bg-primary transition-transform duration-300 ease-in-out z-10 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className='flex justify-center shadow'>
-                <div className='flex justify-between items-center p-4 md:px-12 max-w-7xl flex-1'>
+                <div className='flex justify-between items-center p-4 md:px-8 lg:px-12 max-w-7xl flex-1'>
                     <Link href={"/"}>
                         <Image src={Logo} width={0} className="w-20 md:w-28" alt='Logo' />
                     </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
             <AnimatePresence>
                 {isFullScreenNavVisible && (
                     <motion.div
-                        className="navbar bg-primary h-screen"
+                        className="navbar bg-primary"
                         initial="hidden"
                         animate={isFullScreenNavVisible ? "visible" : "hidden"}
                         exit="hidden"
