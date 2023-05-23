@@ -91,7 +91,7 @@ export default function Home() {
       <section className='normal justify-center bg-primary'>
         <div className='flex-wrap flex justify-center gap-2'>
           {DATA.images.map((src, i) => (
-            <img src={src} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`} />
+            <img src={src} key={i} className="w-1/4 aspect-square object-cover extra-images" alt={`restaurant image ${i}`} />
           ))}
         </div>
       </section>
