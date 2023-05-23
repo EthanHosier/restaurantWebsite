@@ -16,8 +16,7 @@ import Img4 from "/public/img4.jpg"
 import Img5 from "/public/img5.jpg"
 import Img6 from "/public/img6.jpg"
 import React from 'react'
-import iconsMap from '@/util/iconsMap'
-import { FaBeer } from 'react-icons/fa';
+
 
 const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
 const IMAGES = [Img1, Img2, Img3, Img4, Img5, Img6]
@@ -70,7 +69,7 @@ export default function Home() {
             <div className='flex flex-col items-center justify-center flex-1'>
               <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2'>
                 <Link href={d.link}>
-                  <Image src={LOGO_MAP[d.source]} className="w-full h-auto" alt={`${d.source} logo`} />
+                  <img src={d.logo} className="w-full h-auto" alt={`${d.source} logo`} />
                 </Link>
               </div>
               <p>"{d.text}"</p>
@@ -91,13 +90,11 @@ export default function Home() {
       {/*Images section*/}
       <section className='normal justify-center bg-primary'>
         <div className='flex-wrap flex justify-center gap-2'>
-          {IMAGES.map((img, i) => (
-            <Image src={img} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`} />
+          {DATA.images.map((src, i) => (
+            <img src={src} key={i} className="w-1/4 aspect-square object-cover" alt={`restaurant image ${i}`} />
           ))}
         </div>
       </section>
-
-      
 
       <Footer />
     </main>
@@ -117,21 +114,3 @@ const pickupDeliveryBtn = ({ type }) => {
   )
 }
 
-
-/*
-
-<section className='normal h-2/3 flex-col'>
-<img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image'/>
-  <div className='bg-black background opacity-20'>{DATA.slogan}</div>
-  <div className='flex flex-col md:justify-around flex-1 bg-red-200'>
-    {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
-    <div className='flex flex-col  max-w-6xl md:flex-row md:justify-between md:items-between items-center mt-16 gap-8 bg-yellow-200'>
-      {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
-      {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
-    </div>
-  </div>
-</section>
-
-
-
-*/
