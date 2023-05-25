@@ -5,18 +5,12 @@ import Logo from "/public/logo.png"
 import GoogleLogo from "/public/google-logo.png";
 import TripadvisorLogo from "/public/tripadvisor-logo.png";
 import YelpLogo from "/public/yelp-logo.png"
-import Img1 from "/public/img1.jpg"
-import Img2 from "/public/img2.jpg"
-import Img3 from "/public/img3.jpg"
-import Img4 from "/public/img4.jpg"
-import Img5 from "/public/img5.jpg"
-import Img6 from "/public/img6.jpg"
+
 import React from 'react'
 import iconsMap from '@/util/iconsMap'
 
 
 const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
-const IMAGES = [Img1, Img2, Img3, Img4, Img5, Img6]
 
 import Link from 'next/link'
 
