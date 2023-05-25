@@ -60,7 +60,7 @@ const Navbar = ({ isToggled }) => {
                 variants={navList}
             >
 
-                <div className="flex flex-col flex-1 justify-between items-center py-24">
+                <div className="flex flex-col flex-1 justify-between items-center pt-12 pb-32">
 
 
                     <div>
