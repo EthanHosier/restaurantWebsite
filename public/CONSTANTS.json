@@ -8,27 +8,45 @@
             "dropdownOptions": [
                 {
                     "name": "Menu 1",
-                    "url":"/menu1"
+                    "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
                 },
                 {
                     "name": "Menu 2",
-                    "url":"/menu2"
+                    "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
                 },
                 {
                     "name": "Menu 3",
-                    "url":"/menu3"
+                    "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
                 }
             ]
         },
         {
             "name": "Delivery",
             "url": "/delivery",
-            "dropdownOptions": []
+            "dropdownOptions": [
+                {
+                    "name": "Sidcup",
+                    "url": "/sidcup"
+                },
+                {
+                    "name": "Bromley",
+                    "url": "/bromley"
+                }
+            ]
         },
         {
             "name": "Pickup",
             "url": "/pickup",
-            "dropdownOptions": []
+            "dropdownOptions": [
+                {
+                    "name": "Sidcup",
+                    "url": "/sidcup"
+                },
+                {
+                    "name": "Bromley",
+                    "url": "/bromley"
+                }
+            ]
         },
         {
             "name": "Gift Cards",
@@ -36,8 +54,8 @@
             "dropdownOptions": []
         },
         {
-            "name": "Contact",
-            "url": "/contact",
+            "name": "Contact Us",
+            "url": "/contactus",
             "dropdownOptions": []
         }
     ],
@@ -46,6 +64,54 @@
     "p1": "Welcome to The Table. We believe in making the most of time with family and friends, and at The Table you can do just that while enjoying our famous rotisserie chicken and tucking into flavour filled dishes straight from the grill. Plus, don’t forget all our main meals come with fresh, unlimited salad. You can enjoy breakfast, lunch, dinner or order take-away from us, and we can’t wait to welcome you at The Table.",
     "pickup": true,
     "delivery": true,
+    "deliveryOptions": {
+        "sidcup": [
+            {
+                "name": "Uber Eats",
+                "url": "https://ubereats.com",
+                "logo": "https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
+            },
+            {
+                "name": "Just Eat",
+                "url": "https://justeat.com",
+                "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+            },
+            {
+                "name": "Deliveroo",
+                "url": "https://deliveroo.com",
+                "logo": "https://1000logos.net/wp-content/uploads/2020/10/Deliveroo-logo.png"
+            }
+        ],
+        "bromley": [
+            {
+                "name": "Just Eat",
+                "url": "https://justeat.com",
+                "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+            }
+        ]
+    },
+    "pickupOptions": {
+        "sidcup": [
+            {
+                "name": "Uber Eats",
+                "url": "https://ubereats.com",
+                "logo":"https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
+            },
+            {
+                "name": "Just Eat",
+                "url": "https://justeat.com",
+                "logo":"https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+            }
+        ],
+        "bromley": [
+            {
+                "name": "Just Eat",
+                "url": "https://justeat.com",
+                "logo":"https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+
+            }
+        ]
+    },
     "reviews": [
         {
             "source": "tripadvisor",
@@ -109,12 +175,14 @@
         "bromley@thetable.com",
         "sidcup@thetable.com"
     ],
-    "backgrounds": [
-        "https://images.unsplash.com/photo-1543353071-10c8ba85a904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-        "https://images.unsplash.com/photo-1584799580661-53b7c6b99430?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80",
-        "https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80",
-        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-    ],
+    "backgrounds": {
+        "logoSection": "https://images.unsplash.com/photo-1543353071-10c8ba85a904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "pickupDeliverySection": "https://images.unsplash.com/photo-1584799580661-53b7c6b99430?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80",
+        "extraParaPic": "https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80",
+        "connectWithUs": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "pickup": "https://images.unsplash.com/photo-1507914372368-b2b085b925a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "delivery": "https://images.unsplash.com/photo-1575833947349-69324d765146?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
     "images": [
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",

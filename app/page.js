@@ -1,10 +1,6 @@
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import DATA from "/public/CONSTANTS.json"
-import Bg1 from "/public/bg1.jpg"
-import Bg2 from "/public/bg2.jpg"
-import Bg3 from "/public/bg3.jpg"
-import Bg4 from "/public/bg4.jpg"
 import Logo from "/public/logo.png"
 import GoogleLogo from "/public/google-logo.png";
 import TripadvisorLogo from "/public/tripadvisor-logo.png";
@@ -16,6 +12,7 @@ import Img4 from "/public/img4.jpg"
 import Img5 from "/public/img5.jpg"
 import Img6 from "/public/img6.jpg"
 import React from 'react'
+import iconsMap from '@/util/iconsMap'
 
 
 const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
@@ -27,11 +24,10 @@ import Link from 'next/link'
 export default function Home() {
 
   return (
-    <main className='cont bg-primary' id="parallaxContainer">
-
+    <>
       {/* Logo Section */}
       <section className='parallax'>
-        <img src={DATA.backgrounds[0]} className="background" alt='logo section background' />
+        <img src={DATA.backgrounds.logoSection} className="background" alt='logo section background' />
         <div className='bg-black background opacity-10' />
         <Image src={Logo} className="w-1/2" alt='logo' />
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -50,7 +46,7 @@ export default function Home() {
 
       {/* (Pickup & delivery section) */}
       <section className='normal h-2/3 flex-col' id='pickup-delivery'>
-        <img src={DATA.backgrounds[1]} className="background" alt='pick up and delivery background / extra image' />
+        <img src={DATA.backgrounds.pickupDeliverySection} className="background" alt='pick up and delivery background / extra image' />
         <div className='bg-black opacity-20 background' />
         <div className=' h-full flex flex-col md:justify-around'>
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
@@ -80,7 +76,7 @@ export default function Home() {
 
       {/* Extra parallax image section */}
       <section className='parallax' id='extra-parallax-image'>
-        <img src={DATA.backgrounds[2]} className="background" alt='extra booking section background' />
+        <img src={DATA.backgrounds.extraParaPic} className="background" alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center'>{DATA.slogan}</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -96,8 +92,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Connect with us section */}
+      < section className='normal' id="connect-with-us" >
+        <img src={DATA.backgrounds.connectWithUs} className="background" alt='restaurant interior' />
+        <div className='h-full w-full absolute bg-black opacity-50 background '></div>
+
+        <div className='flex flex-col'>
+          <h2 className='text-xl text-tsecondary'>Connect with us</h2>
+          <div className='flex justify-between mt-4'>
+            {DATA.socialMediaLinks.map((link, i) => {
+              const { type, url } = link;
+              const IconComponent = iconsMap[type];
+
+              return (
+                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
+                  <IconComponent className="text-tsecondary" />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section >
+
       <Footer />
-    </main>
+    </>
   )
 }
 

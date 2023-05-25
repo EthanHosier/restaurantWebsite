@@ -61,22 +61,27 @@ const Navbar = () => {
                     <div className='hidden md:flex flex-1 justify-around max-w-2xl'>
                         {DATA.navOptions.map((p, i) => {
                             return (
-                                <div className='dropdown'>
-                                    <Link href={p.url} key={i}>
-                                        <p className='text-tprimary uppercase'>{p.name}</p>
-                                    </Link>
-
+                                <div className='dropdown' key={i}>
                                     {
-                                        p.dropdownOptions?.length > 0 &&
-                                        <div className='dropdown-container '>
-                                            <div className='dropdown-contents bg-primary shadow-xl whitespace-nowrap'>
-                                                {p.dropdownOptions.map((d, i) => (
-                                                    <Link href={d.url}>
-                                                        <p className=''>{d.name}</p>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </div>
+                                        p.dropdownOptions?.length > 0 ?
+                                            <>
+                                                <p className='text-tprimary uppercase'>{p.name}</p>
+                                                <div className='dropdown-container '>
+                                                    <div className='dropdown-contents bg-primary shadow-xl whitespace-nowrap'>
+                                                        {p.dropdownOptions.map((d, i) => (
+                                                            <Link href={p.url + d.url} key={i}>
+                                                                <p className=''>{d.name}</p>
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </>
+
+                                            :
+
+                                            <Link href={p.url}>
+                                                <p className='text-tprimary uppercase'>{p.name}</p>
+                                            </Link>
                                     }
                                 </div>
                             )
@@ -103,7 +108,7 @@ const Navbar = () => {
                         exit="hidden"
                         variants={navContainer}
                     >
-                        <NavbarItems isToggled={isFullScreenNavVisible} />
+                        <NavbarItems isToggled={isFullScreenNavVisible} close={() => setisFullScreenNavVisible(false)} />
                     </motion.div>
                 )}
             </AnimatePresence>

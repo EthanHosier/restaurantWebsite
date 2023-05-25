@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={montserrat.className}>
         <NavBar />
-        {children}
+        <main className='cont bg-secondary' id="parallaxContainer">
+          {children}
+        </main>
       </body>
     </html>
   )

@@ -4,30 +4,10 @@ import DATA from "/public/CONSTANTS"
 import iconsMap from '@/util/iconsMap'
 
 const Footer = () => {
-    const siteNavigation = [{ name: "Home", url: "/" }, ...DATA.navOptions.filter((n) => !!n.url), { name: "Book a Table", url: DATA.bookUrl }]
+    const siteNavigation = [{ name: "Home", url: "/" }, ...DATA.navOptions.filter((n) => n.dropdownOptions.length <= 0), { name: "Book a Table", url: DATA.bookUrl }]
     return (
         <>
-            {/* Connect with us section */}
-            < section className='normal' id="connect-with-us" >
-                <img src={DATA.backgrounds[3]} className="background" alt='restaurant interior' />
-                <div className='h-full w-full absolute bg-black opacity-50 background '></div>
-
-                <div className='flex flex-col'>
-                    <h2 className='text-xl text-tsecondary'>Connect with us</h2>
-                    <div className='flex justify-between mt-4'>
-                        {DATA.socialMediaLinks.map((link, i) => {
-                            const { type, url } = link;
-                            const IconComponent = iconsMap[type];
-
-                            return (
-                                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
-                                    <IconComponent className="text-tsecondary" />
-                                </Link>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section >
+            
 
             <footer className='normal bg-secondary text-tsecondary/[.90] flex flex-col'>
                 <div className='flex flex-wrap gap-6'>
@@ -60,7 +40,6 @@ const Footer = () => {
                         {DATA.emails.map((e, i) => (
                             <p key={i}>Email: {e}</p>
                         ))}
-                        <Link href={"/contact"}><p className='underline mt-4'>Contact us</p></Link>
 
                     </div>
 

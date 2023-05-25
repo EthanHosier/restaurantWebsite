@@ -6,13 +6,14 @@ import Image from "next/image";
 import Logo from "/public/logo.png"
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-const Navbar = ({ isToggled }) => {
+const Navbar = ({ isToggled, close }) => {
     const items = DATA.navOptions;
     const [activeOptions, setActiveOptions] = useState(new Array(DATA.navOptions.length));
 
     const handleOptionClick = (i) => {
-        const newActives = [...activeOptions];
-        newActives[i] = !newActives[i];
+        const prevVal = activeOptions[i];
+        const newActives = new Array(DATA.navOptions.length);
+        newActives[i] = !prevVal;
         setActiveOptions(newActives);
     }
 
@@ -62,34 +63,37 @@ const Navbar = ({ isToggled }) => {
 
                 <div className="flex flex-col flex-1 justify-between items-center pt-12 pb-32">
 
-
                     <div>
                         <motion.li variants={navItem} className="nav-item flex justify-center mb-12">
-                            <Image src={Logo} className="w-1/2" />
+                            <Link href={"/"} className="flex justify-center h-16" onClick={close}>
+                                <Image src={Logo} className="object-contain"/>
+                            </Link>
                         </motion.li>
                         {items.map((item, i) => (
                             <motion.li className="nav-item" variants={navItem} key={i}>
 
-                                {item.url ?
-                                    <Link href={item.url}>
-                                        <p className="text-center text-3xl my-4 ">{item.name}</p>
-                                    </Link>
-                                    :
+                                {item.dropdownOptions.length > 0 ?
+
                                     <>
                                         <div className="flex items-center justify-center" onClick={() => handleOptionClick(i)}>
                                             {
-                                                !!activeOptions[i] ? <AiOutlineMinus size={24}/> : <AiOutlinePlus size={24}/>
+                                                !!activeOptions[i] ? <AiOutlineMinus size={24} /> : <AiOutlinePlus size={24} />
                                             }
-                                            
+
                                             <p className="text-center text-3xl my-1 ml-2">{item.name}</p>
                                         </div>
                                         {!!activeOptions[i] && item.dropdownOptions.map((d, j) => (
-                                            <Link key={j} href={d.url}>
+                                            <Link key={j} href={item.url + d.url} onClick={close}>
                                                 <p className="text-center">{d.name}</p>
                                             </Link>
                                         ))}
                                     </>
 
+                                    :
+
+                                    <Link href={item.url}>
+                                        <p className="text-center text-3xl my-4 ">{item.name}</p>
+                                    </Link>
                                 }
 
 
