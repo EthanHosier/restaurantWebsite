@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import NavbarItems from "./NavbarItems";
 import Logo from "/public/logo.png"
-import data from "/public/CONSTANTS.json"
+import DATA from "/public/CONSTANTS.json"
 import Hamburger from 'hamburger-react'
 
 
@@ -14,7 +14,6 @@ const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [isFullScreenNavVisible, setisFullScreenNavVisible] = useState(false);
-
 
     const handleScroll = () => {
         const mainElement = document.getElementById('parallaxContainer');
@@ -60,15 +59,30 @@ const Navbar = () => {
                         <Image src={Logo} width={0} className="w-20 md:w-28" alt='Logo' />
                     </Link>
                     <div className='hidden md:flex flex-1 justify-around max-w-2xl'>
-                        {data.pages.map((p, i) => {
+                        {DATA.navOptions.map((p, i) => {
                             return (
-                                <Link href={p.url} key={i}>
-                                    <p className='text-tprimary uppercase'>{p.name}</p>
-                                </Link>
+                                <div className='dropdown'>
+                                    <Link href={p.url} key={i}>
+                                        <p className='text-tprimary uppercase'>{p.name}</p>
+                                    </Link>
+
+                                    {
+                                        p.dropdownOptions?.length > 0 &&
+                                        <div className='dropdown-container '>
+                                            <div className='dropdown-contents bg-primary shadow-xl whitespace-nowrap'>
+                                                {p.dropdownOptions.map((d, i) => (
+                                                    <Link href={d.url}>
+                                                        <p className=''>{d.name}</p>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
                             )
                         })}
                     </div>
-                    <Link href={data.bookUrl}>
+                    <Link href={DATA.bookUrl}>
                         <p className='bg-accent rounded text-tsecondary p-3 px-4 text-sm hidden md:block font-semibold'>
                             BOOK A TABLE
                         </p>

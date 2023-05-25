@@ -1,26 +1,44 @@
 {
     "name": "The Table",
     "slogan": "A Culinary Symphony",
-    "pages": [
+    "navOptions": [
         {
             "name": "Menus",
-            "url": "/menus"
+            "url": "",
+            "dropdownOptions": [
+                {
+                    "name": "Menu 1",
+                    "url":"/menu1"
+                },
+                {
+                    "name": "Menu 2",
+                    "url":"/menu2"
+                },
+                {
+                    "name": "Menu 3",
+                    "url":"/menu3"
+                }
+            ]
         },
         {
             "name": "Delivery",
-            "url": "/delivery"
+            "url": "/delivery",
+            "dropdownOptions": []
         },
         {
             "name": "Pickup",
-            "url": "/pickup"
+            "url": "/pickup",
+            "dropdownOptions": []
         },
         {
             "name": "Gift Cards",
-            "url": "/giftcards"
+            "url": "/giftcards",
+            "dropdownOptions": []
         },
         {
             "name": "Contact",
-            "url": "/contact"
+            "url": "/contact",
+            "dropdownOptions": []
         }
     ],
     "bookUrl": "/book",
@@ -44,8 +62,8 @@
         {
             "source": "yelp",
             "text": "Delicious food, good prices",
-            "link": "https://www.tripadvisor.com",
-            "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/2560px-Yelp_Logo.svg.png"
+            "link": "https://www.yelp.co.uk/london",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Yelp_Logo.svg/2560px-Yelp_Logo.svg.png"
         }
     ],
     "addresses": [
@@ -98,7 +116,7 @@
         "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
     ],
     "images": [
-       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
         "https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         "https://images.unsplash.com/photo-1556710808-a2bc27a448f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",

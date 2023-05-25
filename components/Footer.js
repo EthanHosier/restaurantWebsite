@@ -4,7 +4,7 @@ import DATA from "/public/CONSTANTS"
 import iconsMap from '@/util/iconsMap'
 
 const Footer = () => {
-    const siteNavigation = [{ name: "Home", url: "/" }, ...DATA.pages, { name: "Book a Table", url: DATA.bookUrl }]
+    const siteNavigation = [{ name: "Home", url: "/" }, ...DATA.navOptions.filter((n) => !!n.url), { name: "Book a Table", url: DATA.bookUrl }]
     return (
         <>
             {/* Connect with us section */}
