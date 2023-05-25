@@ -3,7 +3,7 @@ const handleSmoothScroll = (target) => {
     const offsetTop = document.querySelector(target).offsetTop - 0.1*screen.height;
     const container = document.getElementById('parallaxContainer');
 
-    container.scrollTo({
+    window.scrollTo({
         top: offsetTop,
         behavior: 'smooth',
     });

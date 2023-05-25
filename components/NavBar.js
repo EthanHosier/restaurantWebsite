@@ -9,18 +9,26 @@ import Logo from "/public/logo.png"
 import DATA from "/public/CONSTANTS.json"
 import Hamburger from 'hamburger-react'
 
+//how many pixels need to scroll down before navbar dissapears
+const SCROLL_TOLERANCE = 100;
 
 const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [isFullScreenNavVisible, setisFullScreenNavVisible] = useState(false);
+    const [startScrollPosition, setStartScrollPosition] = useState(0)
 
     const handleScroll = () => {
         const mainElement = document.getElementById('parallaxContainer');
         const currentScrollPos = mainElement.pageYOffset || mainElement.scrollTop;
-        const isVisible = prevScrollPos > currentScrollPos || currentScrollPos <= 200;
+
+        
+        const isVisible = currentScrollPos <= 200 || prevScrollPos > currentScrollPos || currentScrollPos < startScrollPosition + SCROLL_TOLERANCE;
+        if(prevScrollPos > currentScrollPos) setStartScrollPosition(currentScrollPos);
+        
         setPrevScrollPos(currentScrollPos);
         setIsVisible(isVisible);
+        
     };
 
     useEffect(() => {
