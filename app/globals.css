@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body {
+  overflow: hidden; /*REMOVE THIS?? I'm not sure it actually does anything*/
+}
 
 .navbar {
   position: fixed;
