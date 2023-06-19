@@ -60,7 +60,7 @@ body {
   perspective: 1px;
   transform-style: preserve-3d;
   overflow-x: hidden;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
 }
 
 .parallax {
