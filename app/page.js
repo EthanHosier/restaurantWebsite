@@ -71,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* Extra parallax image section */}
-      <section className='parallax flex' id='extra-parallax-image'>
+      <section className='parallax flex smaller-parallax-section' id='extra-parallax-image'>
         <img src={DATA.backgrounds.extraParaPic} className="background" alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center -mt-20'>"{DATA.slogan}"</h1>

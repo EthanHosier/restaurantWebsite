@@ -67,7 +67,8 @@ const Navbar = () => {
     };
 
     const handleScrollToTop = () => {
-        window.scrollTo({
+        const mainElement = document.getElementById('parallaxContainer');
+        mainElement.scrollTo({
             top: 0,
             behavior: 'smooth', // Use smooth scrolling behavior
             duration: 10, // Adjust the duration as per your preference (in milliseconds), not working for some reason
@@ -143,18 +144,16 @@ const Navbar = () => {
                 className={`fixed z-10 bottom-0 right-3 md:hidden md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
                 onClick={handleScrollToTop}
             >
-                <Link href={"/"}>
                     <BiChevronUp color='white' size={36} />
-                </Link>
             </button>
 
             <button
                 className={`fixed z-10 bottom-0 hidden md:block right-4 md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
                 onClick={handleScrollToTop}
             >
-                <Link href={"/"}>
+                
                     <BiChevronUp color='white' size={50} />
-                </Link>
+                
             </button>
         </>
     );

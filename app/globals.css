@@ -76,18 +76,6 @@ body {
   z-index: 1;
 }
 
-#extra-parallax-image{
-  height: 70vh;
-}
-
-#extra-parallax-image > .background{
-  transform: translateZ(-1px) scale(2.5);
-}
-
-#connect-with-us{
-  height: 30vh;
-}
-
 .parallax > .background {
   position: absolute;
   width: 100%;
@@ -98,6 +86,29 @@ body {
   z-index: -1;
   transform: translateZ(-1px) scale(2);
 }
+
+.smaller-parallax-section{
+  height: 70vh;
+}
+
+.smaller-parallax-section > .background{
+  transform: translateZ(-1px) scale(2.5);
+}
+
+.pickup-delivery-parallax-section{
+  height: 50vh;
+}
+
+.pickup-delivery-parallax-section > .background{
+  transform: translateZ(-1px) scale(3);
+}
+
+
+#connect-with-us{
+  height: 30vh;
+}
+
+
 
 .normal > .background {
   position: absolute; 
@@ -165,4 +176,3 @@ h1{
 #parallaxContainer{
   scroll-behavior: smooth;
 }
-

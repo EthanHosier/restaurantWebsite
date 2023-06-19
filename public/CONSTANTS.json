@@ -64,54 +64,65 @@
     "p1": "Welcome to The Table. We believe in making the most of time with family and friends, and at The Table you can do just that while enjoying our famous rotisserie chicken and tucking into flavour filled dishes straight from the grill. Plus, don’t forget all our main meals come with fresh, unlimited salad. You can enjoy breakfast, lunch, dinner or order take-away from us, and we can’t wait to welcome you at The Table.",
     "pickup": true,
     "delivery": true,
-    "deliveryOptions": {
-        "sidcup": [
-            {
-                "name": "Uber Eats",
-                "url": "https://ubereats.com",
-                "logo": "https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
-            },
-            {
-                "name": "Just Eat",
-                "url": "https://justeat.com",
-                "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
-            },
-            {
-                "name": "Deliveroo",
-                "url": "https://deliveroo.com",
-                "logo": "https://1000logos.net/wp-content/uploads/2020/10/Deliveroo-logo.png"
-            }
-        ],
-        "bromley": [
-            {
-                "name": "Just Eat",
-                "url": "https://justeat.com",
-                "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
-            }
-        ]
-    },
-    "pickupOptions": {
-        "sidcup": [
-            {
-                "name": "Uber Eats",
-                "url": "https://ubereats.com",
-                "logo":"https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
-            },
-            {
-                "name": "Just Eat",
-                "url": "https://justeat.com",
-                "logo":"https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
-            }
-        ],
-        "bromley": [
-            {
-                "name": "Just Eat",
-                "url": "https://justeat.com",
-                "logo":"https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
-
-            }
-        ]
-    },
+    "deliveryOptions": [
+        {
+            "location": "sidcup",
+            "options": [
+                {
+                    "name": "Uber Eats",
+                    "url": "https://ubereats.com",
+                    "logo": "https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
+                },
+                {
+                    "name": "Just Eat",
+                    "url": "https://justeat.com",
+                    "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+                },
+                {
+                    "name": "Deliveroo",
+                    "url": "https://deliveroo.com",
+                    "logo": "https://1000logos.net/wp-content/uploads/2020/10/Deliveroo-logo.png"
+                }
+            ]
+        },
+        {
+            "location": "bromley",
+            "options": [
+                {
+                    "name": "Just Eat",
+                    "url": "https://justeat.com",
+                    "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+                }
+            ]
+        }
+    ],
+    "pickupOptions": [
+        {
+            "location": "sidcup",
+            "options": [
+                {
+                    "name": "Uber Eats",
+                    "url": "https://ubereats.com",
+                    "logo": "https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Logo.png"
+                },
+                {
+                    "name": "Just Eat",
+                    "url": "https://justeat.com",
+                    "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+                }
+            ]
+        },
+        {
+            "location": "bromley",
+            "options": [
+                {
+                    "name": "Just Eat",
+                    "url": "https://justeat.com",
+                    "logo": "https://www.greenspeares.co.uk/wp-content/uploads/2020/12/Just-Eat-logo.png"
+                }
+            ]
+        }
+    ],
     "reviews": [
         {
             "source": "tripadvisor",
