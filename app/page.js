@@ -13,6 +13,7 @@ import iconsMap from '@/util/iconsMap'
 const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
 
 import Link from 'next/link'
+import PhotoGallery from '@/components/PhotoGallery';
 
 
 export default function Home() {
@@ -69,10 +70,10 @@ export default function Home() {
       </section>
 
       {/* Extra parallax image section */}
-      <section className='parallax' id='extra-parallax-image'>
+      <section className='parallax flex' id='extra-parallax-image'>
         <img src={DATA.backgrounds.extraParaPic} className="background" alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
-        <h1 className='text-tsecondary text-center'>{DATA.slogan}</h1>
+        <h1 className='text-tsecondary text-center -mt-20'>"{DATA.slogan}"</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
       </section>
 
@@ -80,9 +81,10 @@ export default function Home() {
       {/*Images section*/}
       <section className='normal justify-center bg-primary'>
         <div className='flex-wrap flex justify-center gap-2'>
-          {DATA.images.map((src, i) => (
+          {/*DATA.images.map((src, i) => (
             <img src={src} key={i} className="w-1/4 aspect-square object-cover extra-images" alt={`restaurant image ${i}`} />
-          ))}
+          ))*/}
+          <PhotoGallery/>
         </div>
       </section>
 

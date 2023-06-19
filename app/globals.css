@@ -4,10 +4,6 @@
 
 
 
-body {
-  overflow: hidden; /*REMOVE THIS?? I'm not sure it actually does anything*/
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -76,6 +72,14 @@ body {
   flex-direction: column;
   transform-style: preserve-3d;
   z-index: 1;
+}
+
+#extra-parallax-image{
+  height: 70vh;
+}
+
+#extra-parallax-image > .background{
+  transform: translateZ(-1px) scale(2.5);
 }
 
 #connect-with-us{
@@ -159,3 +163,4 @@ h1{
 #parallaxContainer{
   scroll-behavior: smooth;
 }
+
