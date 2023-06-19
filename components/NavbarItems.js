@@ -91,7 +91,7 @@ const Navbar = ({ isToggled, close }) => {
 
                                     :
 
-                                    <Link href={item.url}>
+                                    <Link href={item.url} onClick={close}>
                                         <p className="text-center text-3xl my-4 ">{item.name}</p>
                                     </Link>
                                 }
@@ -103,7 +103,7 @@ const Navbar = ({ isToggled, close }) => {
                     </div>
 
                     <motion.li variants={navItem}>
-                        <Link href={DATA.bookUrl} className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl">BOOK A TABLE</Link>
+                        <Link href={DATA.bookUrl} className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl" onClick={close}>BOOK A TABLE</Link>
                     </motion.li>
                 </div>
 

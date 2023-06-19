@@ -32,9 +32,9 @@ export default function Home() {
 
       {/* Brief info section */}
       <section className='normal text-center flex flex-col px-4 py-16 bg-primary'>
-        <div className='max-w-6xl'>
-          {DATA.h1 && <h2 className='text-2xl font-bold mb-4'>{DATA.h1}</h2>}
-          {DATA.p1 && <p className='mb-8'>{DATA.p1}</p>}
+        <div className='max-w-6xl px-4'>
+          {DATA.h1 && <h2 className='text-2xl font-bold mb-8'>{DATA.h1}</h2>}
+          {DATA.p1 && <p className='mb-16'>{DATA.p1}</p>}
           {DATA.bookUrl && BOOK_A_TABLE()}
 
         </div>

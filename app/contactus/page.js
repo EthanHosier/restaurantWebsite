@@ -9,11 +9,10 @@ const page = () => {
     return (
         <>
             {/* Deliver - ... section*/}
-            <section className='parallax flex-col'>
-                <img src={DATA.backgrounds.delivery} className="background" alt='extra booking section background' />
-                <div className='bg-black background opacity-20' />
-                <h1 className='text-tsecondary text-center mb-24'>Contact Us</h1>
-                <SmoothScrollButton target={"#contact-form"} title={"Contact"}/>
+            <section className='parallax pickup-delivery-parallax-section flex-col'>
+                <img src={DATA.backgrounds.contactUs} className="background" alt='extra booking section background' />
+                <div className='bg-black background opacity-50' />
+                <h1 className='text-tsecondary text-center mt-20'>Contact Us</h1>
             </section>
 
             <section className='normal bg-primary' id="contact-form">
