@@ -15,9 +15,6 @@ const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp":
 import Link from 'next/link'
 import PhotoGallery from '@/components/PhotoGallery';
 
-import { Dancing_Script } from 'next/font/google'
-
-const dancingScript =  Dancing_Script({ subsets: ["latin"] })
 
 
 export default function Home() {
@@ -77,7 +74,7 @@ export default function Home() {
       <section className='parallax flex' id='extra-parallax-image'>
         <img src={DATA.backgrounds.extraParaPic} className="background" alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
-        <h1 className='text-tsecondary text-center -mt-20 text-8xl'>"<span className={dancingScript.className}>{DATA.slogan}</span>"</h1>
+        <h1 className='text-tsecondary text-center -mt-20'>"{DATA.slogan}"</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
       </section>
 
