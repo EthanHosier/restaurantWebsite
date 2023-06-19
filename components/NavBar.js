@@ -74,7 +74,6 @@ const Navbar = () => {
         });
     };
 
-    const iconSize = Math.min(56, window.innerWidth / 12);
 
     return (
         <>
@@ -141,11 +140,20 @@ const Navbar = () => {
 
             </nav>
             <button
-                className={`fixed z-10 bottom-0 right-4 md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
+                className={`fixed z-10 bottom-0 right-4 md:hidden md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
                 onClick={handleScrollToTop}
             >
                 <Link href={"/"}>
-                    <BiChevronUp color='white' size={iconSize} />
+                    <BiChevronUp color='white' size={32} />
+                </Link>
+            </button>
+
+            <button
+                className={`fixed z-10 bottom-0 hidden md:block right-4 md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
+                onClick={handleScrollToTop}
+            >
+                <Link href={"/"}>
+                    <BiChevronUp color='white' size={50} />
                 </Link>
             </button>
         </>
