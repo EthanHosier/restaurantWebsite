@@ -10,7 +10,7 @@ const page = () => {
         <>
             {/* Deliver - ... section*/}
             <section className='parallax pickup-delivery-parallax-section flex-col'>
-                <img src={DATA.backgrounds.contactUs} className="background" alt='extra booking section background' />
+                <img src={DATA.backgrounds.connectWithUs} className="background" alt='extra booking section background' /> {/*REPLACE WITH OWN CONTACT US PIC (and put opacity back to 20 on overlay below) */}
                 <div className='bg-black background opacity-50' />
                 <h1 className='text-tsecondary text-center mt-20'>Contact Us</h1>
             </section>
