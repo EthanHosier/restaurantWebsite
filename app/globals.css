@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  overflow: hidden; /*REMOVE THIS?? I'm not sure it actually does anything*/
+  overflow: hidden; /*Needed or website doesnt load on ios*/
 }
 
 .navbar {
