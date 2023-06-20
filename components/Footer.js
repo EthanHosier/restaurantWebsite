@@ -52,7 +52,7 @@ const Footer = () => {
                     ))}
                 </div>
                 <p className='text-xs md:text-sm mt-4'>© {DATA.name} - All Rights Reserved</p>
-                <p className='text-xs md:text-sm mb-14'>Website by <a href='https://hosierwebsites.com' className='underline'>Hosier Websites</a></p>
+                <p className='text-xs md:text-sm mb-16'>Website by <a href='https://hosierwebsites.com' className='underline'>Hosier Websites</a></p>
             </footer>
         </>
     )
