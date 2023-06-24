@@ -141,14 +141,14 @@ const Navbar = () => {
 
             </nav>
             <button
-                className={`fixed z-10 bottom-0 right-3 md:hidden md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
+                className={`fixed z-10 bottom-0 right-3 md:hidden md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'} ${isFullScreenNavVisible && "hidden"}`}
                 onClick={handleScrollToTop}
             >
                     <BiChevronUp color='white' size={36} />
             </button>
 
             <button
-                className={`fixed z-10 bottom-0 hidden md:block right-4 md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
+                className={`fixed z-7 bottom-0 hidden md:block right-4 md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'}`}
                 onClick={handleScrollToTop}
             >
                 
