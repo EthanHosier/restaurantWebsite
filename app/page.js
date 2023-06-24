@@ -46,7 +46,7 @@ export default function Home() {
         <div className='bg-black opacity-20 background' />
         <div className=' h-full flex flex-col md:justify-around'>
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
-          <div className='flex flex-col max-w-6xl flex-1 md:flex-row justify-around md:justify-between items-center'>
+          <div className='flex flex-col max-w-6xl flex-1 md:flex-row justify-around md:justify-between items-center gap-4'>
             {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
             {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
           </div>

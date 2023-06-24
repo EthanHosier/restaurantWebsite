@@ -31,14 +31,11 @@ const page = () => {
                       <div className='flex flex-col items-center justify-center'>
 
                         {
-                          
-                          
                           <div className='flex-1 flex w-56 md:w-5/6 max-w-2xl items-center justify-center'>
                           <Link href={d.url} className="flex items-center justify-center">
                             <img src={d.logo} className="w-3/4 h-auto" alt={`${d.name} logo`} />
                           </Link>
                         </div>
-                          
                           
                         }
 

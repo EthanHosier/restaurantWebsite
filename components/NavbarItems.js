@@ -66,7 +66,7 @@ const Navbar = ({ isToggled, close }) => {
                     <div>
                         <motion.li variants={navItem} className="nav-item flex justify-center mb-12">
                             <Link href={"/"} className="flex justify-center h-16" onClick={close}>
-                                <Image src={Logo} className="object-contain"/>
+                                <Image src={Logo} className="object-contain" />
                             </Link>
                         </motion.li>
                         {items.map((item, i) => (
@@ -92,7 +92,7 @@ const Navbar = ({ isToggled, close }) => {
                                     :
 
                                     <Link href={item.url} onClick={close}>
-                                        <p className="text-center text-3xl my-4 ">{item.name}</p>
+                                        <p className="text-center text-3xl my-4">{item.name}</p>
                                     </Link>
                                 }
 
@@ -103,7 +103,14 @@ const Navbar = ({ isToggled, close }) => {
                     </div>
 
                     <motion.li variants={navItem}>
-                        <Link href={DATA.bookUrl} className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl" onClick={close}>BOOK A TABLE</Link>
+                        <div>
+
+                        </div>
+                        <Link href={DATA.bookUrl} onClick={close}>
+                            <div className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl">
+                                BOOK A TABLE
+                            </div>
+                        </Link>
                     </motion.li>
                 </div>
 
