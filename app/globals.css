@@ -4,6 +4,10 @@
 
 body {
   overflow: hidden; /*Needed or website doesnt load on ios*/
+  --min-screen-height: 640px;
+  --smaller-min-screen-height: 448px;
+  --half-min-screen-height: 320px; 
+  --thirdish-min-screen-height: 192px;
 }
 
 .navbar {
@@ -66,6 +70,7 @@ body {
 .parallax {
   width: 100vw;
   height: 100vh;
+  min-height: var(--min-screen-height);
   position: relative;
   display: flex;
   justify-content: center;
@@ -89,6 +94,7 @@ body {
 
 .smaller-parallax-section{
   height: 70vh;
+  min-height: var(--smaller-min-screen-height);
 }
 
 .smaller-parallax-section > .background{
@@ -97,6 +103,7 @@ body {
 
 .pickup-delivery-parallax-section{
   height: 50vh;
+  min-height: var(--half-min-screen-height);
 }
 
 .pickup-delivery-parallax-section > .background{
@@ -106,9 +113,8 @@ body {
 
 #connect-with-us{
   height: 30vh;
+  min-height: var(--thirdish-min-screen-height);
 }
-
-
 
 .normal > .background {
   position: absolute; 
