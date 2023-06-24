@@ -24,7 +24,7 @@ const page = () => {
           {DATA.deliveryOptions.map((location, i) => (
             <>
               <div className='flex flex-col items-center w-full'>
-                <h3 className='font-semibold text-2xl sm:text-4xl'>{toTitleCase(location.location)}</h3>
+                <h3 className='font-semibold text-2xl sm:text-4xl w-full text-start mb-4'>{toTitleCase(location.location)}</h3>
                 <div className='flex flex-col sm:flex-row'>
                   {
                     location.options.map((d, i) => (
@@ -33,7 +33,7 @@ const page = () => {
                         {
                           <div className='flex-1 flex w-56 md:w-5/6 max-w-2xl items-center justify-center'>
                           <Link href={d.url} className="flex items-center justify-center">
-                            <img src={d.logo} className="w-3/4 h-auto" alt={`${d.name} logo`} />
+                            <img src={d.logo} className="w-3/4 h-auto -mb-8 sm:-mb-0" alt={`${d.name} logo`} />
                           </Link>
                         </div>
                           
