@@ -5,14 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import NavbarItems from "./NavbarItems";
-import Logo from "/public/logo.png"
-import DATA from "/public/CONSTANTS.json"
 import Hamburger from 'hamburger-react'
 import { BiChevronUp } from "react-icons/bi"
 //how many pixels need to scroll down before navbar dissapears
 const SCROLL_TOLERANCE = 100;
 
-const Navbar = () => {
+const Navbar = ({DATA}) => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [isFullScreenNavVisible, setisFullScreenNavVisible] = useState(false);
@@ -82,7 +80,7 @@ const Navbar = () => {
                 <div className='flex justify-center shadow'>
                     <div className='flex justify-between items-center p-4 md:px-8 lg:px-12 max-w-7xl flex-1'>
                         <Link href={"/"}>
-                            <Image src={Logo} width={0} className="w-20 md:w-28" alt='Logo' />
+                            {<img src={DATA.logo} fill className="w-20 md:w-28" alt='Logo' />}
                         </Link>
                         <div className='hidden md:flex flex-1 justify-around max-w-2xl'>
                             {DATA.navOptions.map((p, i) => {
@@ -114,12 +112,12 @@ const Navbar = () => {
                             })}
                         </div>
                         <Link href={DATA.bookUrl}>
-                            <p className='bg-accent rounded text-tsecondary p-3 px-4 text-sm hidden md:block font-semibold'>
+                            <p className='bg-accent rounded text-ttertiary p-3 px-4 text-sm hidden md:block font-semibold'>
                                 BOOK A TABLE
                             </p>
                         </Link>
                         <div className={`md:hidden z-10 right-4 ${isFullScreenNavVisible ? "fixed" : "absolute"}`}>
-                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} />
+                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} color={DATA.colors.secondaryTextCol} />
                         </div>
                     </div>
                 </div>
@@ -134,7 +132,7 @@ const Navbar = () => {
                             exit="hidden"
                             variants={navContainer}
                         >
-                            <NavbarItems isToggled={isFullScreenNavVisible} close={() => setisFullScreenNavVisible(false)} />
+                            <NavbarItems DATA={DATA} isToggled={isFullScreenNavVisible} close={() => setisFullScreenNavVisible(false)} />
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -144,7 +142,7 @@ const Navbar = () => {
                 className={`fixed z-10 bottom-0 right-3 md:hidden md:right-16 md:bottom-8 rounded-full p-2 bg-accent drop-shadow-lg flex items-center justify-center transition-transform duration-300 ease-in-out ${srollToTopVisible ? '-translate-y-8' : 'translate-y-20 md:translate-y-32'} ${isFullScreenNavVisible && "hidden"}`}
                 onClick={handleScrollToTop}
             >
-                    <BiChevronUp color='white' size={36} />
+                    <BiChevronUp color={DATA.colors.tertiaryTextCol} size={36} />
             </button>
 
             <button

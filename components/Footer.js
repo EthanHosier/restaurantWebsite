@@ -1,15 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
-import DATA from "/public/CONSTANTS"
 import iconsMap from '@/util/iconsMap'
+import { getOpeningTimesArrays } from '@/util/util'
 
-const Footer = () => {
+const Footer = ({DATA}) => {
     const siteNavigation = [{ name: "Home", url: "/" }, ...DATA.navOptions.filter((n) => n.dropdownOptions.length <= 0), { name: "Book a Table", url: DATA.bookUrl }]
     return (
         <>
-            
-
-            <footer className='normal bg-secondary text-tsecondary/[.90] flex flex-col'>
+            <footer className='normal bg-secondary text-tsecondary flex flex-col'>
                 <div className='flex flex-wrap gap-6'>
                     {DATA.addresses.map((a, i) => (
                         <div className='justify-start text-start text-xs md:text-sm'>
@@ -17,14 +15,17 @@ const Footer = () => {
                             <p>{a.address}</p>
                             <a href={`tel:${a.phone.replace(/\s/g, '')}`} className="underline">{a.phone}</a>
                             <h4 className='font-semibold mt-3'>Opening times</h4>
-                            {a.openingTimes.map((ot, i) => (
+                            
+                            
+                            
+                            {getOpeningTimesArrays(a.openingTimes).map((ot, i) => (
                                 <p>{ot}</p>
                             ))}
                         </div>
                     ))}
 
                     <div className='justify-start text-start text-xs md:text-sm'>
-                        <p className='font-semibold'>{DATA.hashtag}</p>
+                        <p className='font-semibold'>#{DATA.hashtag}</p>
                         <div className='flex mt-1 mb-1 gap-1'>
                             {DATA.socialMediaLinks.map((link, i) => {
                                 const { type, url } = link;

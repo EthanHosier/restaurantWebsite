@@ -1,40 +1,41 @@
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import DATA from "/public/CONSTANTS.json"
-import Logo from "/public/logo.png"
-import GoogleLogo from "/public/google-logo.png";
-import TripadvisorLogo from "/public/tripadvisor-logo.png";
-import YelpLogo from "/public/yelp-logo.png"
+import GoogleLogo from "/public/ReviewLogos/google-logo.webp";
+import Tripadvisor from "/public/ReviewLogos/tripadvisor.webp"
+import YelpLogo from "/public/ReviewLogos/yelp-logo.webp"
 
 import React from 'react'
 import iconsMap from '@/util/iconsMap'
 
 
-const LOGO_MAP = { "google": GoogleLogo, "tripadvisor": TripadvisorLogo, "yelp": YelpLogo }
-
 import Link from 'next/link'
 import PhotoGallery from '@/components/PhotoGallery';
+import { getWebsiteData } from '@/util/util';
 
+export const revalidate = 3600 * 3 // revalidate every 3 hours
 
+const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo }
 
-export default function Home() {
+export default async function Home() {
+
+  const DATA = await getWebsiteData();
 
   return (
     <>
       {/* Logo Section */}
       <section className='parallax'>
-        <img src={DATA.backgrounds.logoSection} className="background" alt='logo section background' />
+        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} unoptimized={true}/>
         <div className='bg-black background opacity-10' />
-        <Image src={Logo} className="w-1/2" alt='logo' />
+        <img src={DATA.logo} className="w-1/2" alt='logo' />
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
-
       </section>
 
       {/* Brief info section */}
       <section className='normal text-center flex flex-col px-4 py-16 bg-primary'>
         <div className='max-w-6xl px-4'>
-          {DATA.h1 && <h2 className='text-2xl font-bold mb-8'>{DATA.h1}</h2>}
-          {DATA.p1 && <p className='mb-16'>{DATA.p1}</p>}
+          {DATA.infoTitle && <h2 className='text-2xl font-bold mb-8'>{DATA.infoTitle}</h2>}
+          {DATA.infoText && <p className='mb-16 md:text-xl'>{DATA.infoText}</p>}
           {DATA.bookUrl && BOOK_A_TABLE()}
 
         </div>
@@ -42,7 +43,8 @@ export default function Home() {
 
       {/* (Pickup & delivery section) */}
       <section className='normal flex-col' id='pickup-delivery'>
-        <img src={DATA.backgrounds.pickupDeliverySection} className="background" alt='pick up and delivery background / extra image' />
+        <Image src={DATA.backgrounds.pickupDeliverySection} className="background" fill alt='pick up and delivery background / extra image' priority={true}/>
+
         <div className='bg-black opacity-20 background' />
         <div className=' h-full flex flex-col md:justify-around'>
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
@@ -61,7 +63,8 @@ export default function Home() {
             <div className='flex flex-col items-center justify-center flex-1'>
               <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2'>
                 <Link href={d.link}>
-                  <img src={d.logo} className="w-full h-auto" alt={`${d.source} logo`} />
+                  <Image src={LOGO_MAP[d.source]} alt={`${d.source} logo`} style={{ width: "full", height: "auto" }} priority={true}/>
+
                 </Link>
               </div>
               <p>"{d.text}"</p>
@@ -70,9 +73,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Extra parallax image section */}
+      {/* Extra parallax image section aka slogan section*/}
       <section className='parallax flex smaller-parallax-section'>
-        <img src={DATA.backgrounds.extraParaPic} className="background" alt='extra booking section background' />
+      <Image src={DATA.backgrounds.sloganSection} className="background" fill alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center -mt-20'>"{DATA.slogan}"</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -85,25 +88,25 @@ export default function Home() {
           {/*DATA.images.map((src, i) => (
             <img src={src} key={i} className="w-1/4 aspect-square object-cover extra-images" alt={`restaurant image ${i}`} />
           ))*/}
-          <PhotoGallery/>
+          <PhotoGallery DATA={DATA} />
         </div>
       </section>
 
       {/* Connect with us section */}
       < section className='normal' id="connect-with-us" >
-        <img src={DATA.backgrounds.connectWithUs} className="background" alt='restaurant interior' />
+      <Image src={DATA.backgrounds.connectWithUs} className="background" fill alt='restaurant interior' priority={true}/>
         <div className='h-full w-full absolute bg-black opacity-50 background '></div>
 
         <div className='flex flex-col'>
           <h2 className='text-xl text-tsecondary'>Connect with us</h2>
-          <div className='flex justify-between mt-4'>
+          <div className='flex justify-center mt-4 gap-2'>
             {DATA.socialMediaLinks.map((link, i) => {
               const { type, url } = link;
               const IconComponent = iconsMap[type];
 
               return (
                 <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
-                  <IconComponent className="text-tsecondary" />
+                  <IconComponent className="text-ttertiary" />
                 </Link>
               );
             })}
@@ -111,7 +114,7 @@ export default function Home() {
         </div>
       </section >
 
-      <Footer />
+      <Footer DATA={DATA} />
     </>
   )
 }
@@ -119,13 +122,13 @@ export default function Home() {
 
 const BOOK_A_TABLE = () => {
   return (
-    <Link href={DATA.bookUrl}><p className='bg-accent rounded text-tsecondary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLE</p></Link>
+    <Link href={DATA.bookUrl}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLE</p></Link>
   )
 }
 
 const pickupDeliveryBtn = ({ type }) => {
   return (
-    <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='bg-accent rounded text-tsecondary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64'>{type}</p></Link>
+    <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64'>{type}</p></Link>
   )
 }
 

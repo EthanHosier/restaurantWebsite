@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import DATA from "/public/CONSTANTS"
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "/public/logo.png"
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-const Navbar = ({ isToggled, close }) => {
+
+const Navbar = ({ isToggled, close, DATA }) => {
     const items = DATA.navOptions;
     const [activeOptions, setActiveOptions] = useState(new Array(DATA.navOptions.length));
 
@@ -66,7 +65,7 @@ const Navbar = ({ isToggled, close }) => {
                     <div>
                         <motion.li variants={navItem} className="nav-item flex justify-center mb-12">
                             <Link href={"/"} className="flex justify-center h-16" onClick={close}>
-                                <Image src={Logo} className="object-contain" />
+                                <img src={DATA.logo} className="object-contain" />
                             </Link>
                         </motion.li>
                         {items.map((item, i) => (
@@ -107,7 +106,7 @@ const Navbar = ({ isToggled, close }) => {
 
                         </div>
                         <Link href={DATA.bookUrl} onClick={close}>
-                            <div className="bg-accent rounded-md p-4 px-7 text-white font-semibold text-xl">
+                            <div className="bg-accent rounded-md p-4 px-7 text-ttertiary font-semibold text-xl">
                                 BOOK A TABLE
                             </div>
                         </Link>

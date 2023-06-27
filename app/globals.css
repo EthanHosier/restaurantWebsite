@@ -8,6 +8,15 @@ body {
   --smaller-min-screen-height: 448px;
   --half-min-screen-height: 320px; 
   --thirdish-min-screen-height: 192px;
+
+  --primaryBgCol: black;
+  --secondaryBgCol: black;
+  --tertiaryBgCol: black;
+  
+  --primaryTextCol: black;
+  --secondaryTextCol: black;
+  --tertiaryTextCol: black;
+
 }
 
 .navbar {
@@ -141,6 +150,11 @@ body {
   transform: translateZ(0px);
 }
 
+#pickup-delivery{
+  height: 50vh;
+  min-height: var(--half-min-screen-height);
+}
+
 @media (min-width: 640px) {
   #pickup-delivery {
     padding-top: 128px;
@@ -182,3 +196,34 @@ h1{
 #parallaxContainer{
   scroll-behavior: smooth;
 }
+
+#bookingPage{
+  height: 70vh;
+}
+
+
+
+.bg-primary{
+  background-color: var(--primaryBgCol) !important;
+}
+
+.bg-secondary{
+  background-color: var(--secondaryBgCol) !important;
+}
+
+.bg-accent{
+  background-color: var(--tertiaryBgCol) !important;
+}
+
+.text-tprimary{
+  color: var(--primaryTextCol) !important;
+}
+
+.text-tsecondary{
+  color: var(--secondaryTextCol) !important;
+}
+
+.text-ttertiary{
+  color: var(--tertiaryTextCol) !important;
+}
+

@@ -1,17 +1,23 @@
 import Footer from '@/components/Footer'
 import React from 'react'
-import DATA from "/public/CONSTANTS.json"
 
 import SmoothScrollButton from '@/components/SmoothScrollButton'
 import Form from '@/components/Form'
+import { getWebsiteData } from '@/util/util'
+import Image from 'next/image'
 
-const page = () => {
+export const revalidate = 3600 * 3 // revalidate every 3 hours
+
+
+const page = async() => {
+    const DATA = await getWebsiteData();
+    
     return (
         <>
             {/* Deliver - ... section*/}
             <section className='parallax pickup-delivery-parallax-section flex-col'>
-                <img src={DATA.backgrounds.connectWithUs} className="background" alt='extra booking section background' /> {/*REPLACE WITH OWN CONTACT US PIC (and put opacity back to 20 on overlay below) */}
-                <div className='bg-black background opacity-50' />
+                <Image src={DATA.backgrounds.contactUs} fill unoptimized={true} priority={true} className="background" alt='extra booking section background' /> 
+                <div className='bg-black background opacity-20' />
                 <h1 className='text-tsecondary text-center mt-20'>Contact Us</h1>
             </section>
 
@@ -20,7 +26,7 @@ const page = () => {
             </section>
         
 
-            <Footer />
+            <Footer DATA={DATA}/>
 
         </>
     )
