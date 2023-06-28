@@ -24,11 +24,14 @@ export default async function Home() {
   return (
     <>
       {/* Logo Section */}
-      <section className='parallax'>
-        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} unoptimized={true}/>
+      <section className='parallax relative'>
+        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} unoptimized={true} />
         <div className='bg-black background opacity-10' />
-        <img src={DATA.logo} className="w-1/2" alt='logo' />
+        <div className='w-2/3 h-1/4 relative flex flex-col'>
+          <Image src={DATA.logo} fill className="object-contain" />
+        </div>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
+
       </section>
 
       {/* Brief info section */}
@@ -43,7 +46,7 @@ export default async function Home() {
 
       {/* (Pickup & delivery section) */}
       <section className='normal flex-col' id='pickup-delivery'>
-        <Image src={DATA.backgrounds.pickupDeliverySection} className="background" fill alt='pick up and delivery background / extra image' priority={true}/>
+        <Image src={DATA.backgrounds.pickupDeliverySection} className="background" fill alt='pick up and delivery background / extra image' priority={true} />
 
         <div className='bg-black opacity-20 background' />
         <div className=' h-full flex flex-col md:justify-around'>
@@ -63,7 +66,7 @@ export default async function Home() {
             <div className='flex flex-col items-center justify-center flex-1'>
               <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2'>
                 <Link href={d.link}>
-                  <Image src={LOGO_MAP[d.source]} alt={`${d.source} logo`} style={{ width: "full", height: "auto" }} priority={true}/>
+                  <Image src={LOGO_MAP[d.source]} alt={`${d.source} logo`} style={{ width: "full", height: "auto" }} priority={true} />
 
                 </Link>
               </div>
@@ -75,7 +78,7 @@ export default async function Home() {
 
       {/* Extra parallax image section aka slogan section*/}
       <section className='parallax flex smaller-parallax-section'>
-      <Image src={DATA.backgrounds.sloganSection} className="background" fill alt='extra booking section background' />
+        <Image src={DATA.backgrounds.sloganSection} className="background" fill alt='extra booking section background' />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center -mt-20'>"{DATA.slogan}"</h1>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
@@ -94,7 +97,7 @@ export default async function Home() {
 
       {/* Connect with us section */}
       < section className='normal' id="connect-with-us" >
-      <Image src={DATA.backgrounds.connectWithUs} className="background" fill alt='restaurant interior' priority={true}/>
+        <Image src={DATA.backgrounds.connectWithUs} className="background" fill alt='restaurant interior' priority={true} />
         <div className='h-full w-full absolute bg-black opacity-50 background '></div>
 
         <div className='flex flex-col'>
