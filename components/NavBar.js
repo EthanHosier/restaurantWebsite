@@ -117,7 +117,7 @@ const Navbar = ({DATA}) => {
                             </p>
                         </Link>
                         <div className={`md:hidden z-10 right-4 ${isFullScreenNavVisible ? "fixed" : "absolute"}`}>
-                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} color={DATA.colors.primaryTextCol} />
+                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} color={DATA.colors.PrimaryTextCol} />
                         </div>
                     </div>
                 </div>
