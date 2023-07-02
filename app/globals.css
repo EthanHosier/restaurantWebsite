@@ -199,7 +199,7 @@ h1{
 
 #bookingPage{
   height: 90vh;
-  min-height: var(--smaller-min-screen-height) * 1.1;
+  min-height: var(--min-screen-height) !important;
 }
 
 
@@ -234,7 +234,7 @@ h1{
 }
 
 .animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
+  animation: fade-in 0.2s ease-out forwards;
 }
 
 #booking-iframe{
