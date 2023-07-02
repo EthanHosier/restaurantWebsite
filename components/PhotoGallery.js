@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import PhotoAlbum from "react-photo-album";
+import Image from 'next/image';
 
-
-const PhotoGallery = ({DATA}) => {
+const PhotoGallery = ({ DATA }) => {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -18,7 +18,9 @@ const PhotoGallery = ({DATA}) => {
   return (
     <div className='flex-wrap flex justify-center gap-2'>
       {DATA.images.map((src, i) => (
-            <img src={src} key={i} onClick={() => onClick(i)} className="w-1/4 aspect-square object-cover extra-images cursor-pointer" alt={`restaurant image ${i}`} />
+        <div className='w-1/3 aspect-square relative extra-images'>
+          <Image src={src} key={i} onClick={() => onClick(i)} className="object-cover cursor-pointer" fill alt={`restaurant image ${i}`} />
+        </div>
       ))}
 
       <Lightbox
