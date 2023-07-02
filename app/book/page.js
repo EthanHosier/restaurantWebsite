@@ -9,10 +9,11 @@ const page = async() => {
     <>
       <section className='normal bg-white h-screen w-screen' id="bookingPage">
         <iframe
-          src='http://2010heardle.com.s3-website-us-east-1.amazonaws.com/'
+          src={`https://d303vz01x9nm1g.cloudfront.net?restaurantId=${process.env.WEBSITE_UUID}`}
           className="shadow-xl h-full mt-8 sm:mt-16 w-4/5 max-w-xl"
         />
       </section>
+      <p></p>
       <Footer DATA={DATA}/>
     </>
 
