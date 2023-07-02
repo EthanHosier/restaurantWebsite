@@ -20,7 +20,7 @@ export async function getWebsiteData() {
   const data = dataDoc.data();
 
 
-  //now need to populate the images w/ signed urls + combine dataDoc and locationsDoc
+  //NO LONGER USING SIGNED URLS (but cba to change variable name te he)
   const signedData = getDeepCopy(data);
 
 
