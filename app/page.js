@@ -131,7 +131,10 @@ const BOOK_A_TABLE = () => {
 
 const pickupDeliveryBtn = ({ type }) => {
   return (
-    <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64'>{type}</p></Link>
+    <div className='bg-accent p-4 px-7 w-40 md:w-64 rounded flex items-center justify-center'>
+      <Link href={type === "delivery" ? "/delivery" : "/pickup"}><p className='text-ttertiary text-xl font-semibold uppercase '>{type}</p>
+      </Link>
+    </div>
   )
 }
 
