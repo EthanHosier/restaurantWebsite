@@ -10,10 +10,10 @@ module.exports = {
         pathname: '/management-restaurants.appspot.com/**',
       },
       {
-        protocol: "https",
-        hostname: "plus.unsplash.com",
-        port:"",
-        pathname:"/premium_photo-1679026956879-05c0a4e63f3a",
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        port: '',
+        pathname: '/v0/b/management-restaurants.appspot.com/o/**'
       }
     ],
   },

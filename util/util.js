@@ -6,23 +6,10 @@ const USER_UUID = process.env.WEBSITE_UUID;
 
 const getDeepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
-const EXPIRATION_SECS = 60 * 60 * 3; //3 hrs
-
-const getSignedUrl = async (imagePath) => {
-  const options = {
-    action: "read",
-    expires: Date.now() + EXPIRATION_SECS * 1000,
-  };
-
-  try {
-    const [url] = await bucket.file(imagePath).getSignedUrl(options);
-    //console.log("Signed URL:", url);
-    return url;
-  } catch (error) {
-    //console.error("Error generating signed URL:", error);
-    return null;
-  }
-};
+const generateGetUrl = (img) => {
+  const url = `https://firebasestorage.googleapis.com/v0/b/management-restaurants.appspot.com/o/${img.replace(/\//g, "%2F")}?alt=media`
+  return url;
+}
 
 export async function getWebsiteData() {
   const dataPromise = admin.firestore().collection("websites").doc(USER_UUID).get();
@@ -33,37 +20,29 @@ export async function getWebsiteData() {
   const data = dataDoc.data();
 
 
-
   //now need to populate the images w/ signed urls + combine dataDoc and locationsDoc
   const signedData = getDeepCopy(data);
 
 
   if (data.logo) {
-    const url = await getSignedUrl(data.logo)
-    signedData.logo = url
+    signedData.logo = generateGetUrl(data.logo);
   }
 
-
-  await Promise.all(data.images.map(async (img, i) => {
-    if (img) {
-      const url = await getSignedUrl(img);
-      signedData.images[i] = url;
+  data.images.forEach((img, i) => {
+    if(img){
+      signedData.images[i] = generateGetUrl(img);
     } else {
-      signedData.images[i] = "";
+      signedData.images[i] = ""
     }
-  }));
+  })
 
-
-  await Promise.all(Object.keys(data.backgrounds).map(async (key) => {
-    if (data.backgrounds[key]) {
-      const url = await getSignedUrl(data.backgrounds[key]);
-      signedData.backgrounds[key] = url;
+  Object.keys(data.backgrounds).forEach((key) => {
+    if(data.backgrounds[key]){
+      signedData.backgrounds[key] = generateGetUrl(data.backgrounds[key]);
     } else {
       signedData.backgrounds[key] = "";
     }
-  }));
-
-  /// need to make this async?????? (says not async tho idfk) ^#############################################
+  })
 
   //now build the location data
   signedData.deliveryOptions = [];
