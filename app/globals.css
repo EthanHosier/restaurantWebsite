@@ -152,7 +152,7 @@ body {
 
 #pickup-delivery{
   height: 50vh;
-  min-height: var(--half-min-screen-height);
+  min-height: var(--smaller-min-screen-height);
 }
 
 @media (min-width: 640px) {
