@@ -10,7 +10,7 @@ const page = async() => {
       <section className='normal bg-white h-screen w-screen' id="bookingPage">
         <iframe
           src={`https://d303vz01x9nm1g.cloudfront.net?restaurantId=${process.env.WEBSITE_UUID}`}
-          className="shadow-xl h-full mt-12 sm:mt-16 w-4/5 max-w-xl"
+          className="shadow-xl h-full mt-12 sm:mt-16 w-4/5 max-w-xl border rounded-lg"
           id="booking-iframe"
         />
       </section>
