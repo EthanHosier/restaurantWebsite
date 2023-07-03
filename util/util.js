@@ -48,7 +48,6 @@ export async function getWebsiteData() {
   signedData.deliveryOptions = [];
   signedData.pickupOptions = [];
   signedData.addresses = [];
-  signedData.addresses = [];
   signedData.emails = [];
   signedData.delivery = false;
   signedData.pickup = false;
@@ -88,9 +87,12 @@ export async function getWebsiteData() {
     }
     //addresses
     const address = {
+      locationId: location.locationId,
+      name: location.name,
       area: location.location,
       address: location.address,
       phone: location.contactNumber,
+      email: location.contactEmail,
       openingTimes: location.openingTimes,
     }
     signedData.addresses.push(address);

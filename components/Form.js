@@ -1,13 +1,8 @@
 "use client";
 import { useState } from 'react';
 
-const restaurants = [
-  { id: 1, name: 'Restaurant A' },
-  { id: 2, name: 'Restaurant B' },
-  { id: 3, name: 'Restaurant C' },
-];
 
-const Form = () => {
+const Form = ({ DATA }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,6 +22,26 @@ const Form = () => {
     if (Object.keys(validationErrors).length === 0) {
       // Form submission logic goes here
       console.log('Form submitted:', formData);
+
+      const foundLocation = DATA.addresses.find(obj => obj.locationId === formData.location);
+
+      console.log(foundLocation.email)
+
+      fetch('https://us-central1-management-restaurants.cloudfunctions.net/api/bookings/handleContactUs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': "willybum"
+        },
+        body: JSON.stringify({
+          firstname: formData.firstName,
+          surname: formData.lastName,
+          emailFrom: formData.email,
+          emailTo: foundLocation.email,
+          message: formData.message,
+        })
+      })
+
       // Reset form data
       setFormData({
         firstName: '',
@@ -71,9 +86,8 @@ const Form = () => {
             First Name <span className='text-red-500'>*</span>
           </label>
           <input
-            className={`appearance-none border ${
-              errors.firstName ? 'border-red-500' : 'border-gray-300'
-            } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+            className={`appearance-none border ${errors.firstName ? 'border-red-500' : 'border-gray-300'
+              } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
             id="firstName"
             name="firstName"
             type="text"
@@ -89,9 +103,8 @@ const Form = () => {
             Last Name <span className='text-red-500'>*</span>
           </label>
           <input
-            className={`appearance-none border ${
-              errors.lastName ? 'border-red-500' : 'border-gray-300'
-            } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+            className={`appearance-none border ${errors.lastName ? 'border-red-500' : 'border-gray-300'
+              } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
             id="lastName"
             name="lastName"
             type="text"
@@ -108,9 +121,8 @@ const Form = () => {
           Email <span className='text-red-500'>*</span>
         </label>
         <input
-          className={`appearance-none border ${
-            errors.email ? 'border-red-500' : 'border-gray-300'
-          } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+          className={`appearance-none border ${errors.email ? 'border-red-500' : 'border-gray-300'
+            } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
           id="email"
           name="email"
           type="email"
@@ -124,18 +136,17 @@ const Form = () => {
           Restaurant Location <span className='text-red-500'>*</span>
         </label>
         <select
-          className={`appearance-none border ${
-            errors.location ? 'border-red-500' : 'border-gray-300'
-          } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+          className={`appearance-none border ${errors.location ? 'border-red-500' : 'border-gray-300'
+            } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
           id="location"
           name="location"
           value={formData.location}
           onChange={handleChange}
         >
           <option value="">Select a location</option>
-          {restaurants.map((restaurant) => (
-            <option key={restaurant.id} value={restaurant.name}>
-              {restaurant.name}
+          {DATA.addresses.map((address) => (
+            <option key={address.locationId} value={address.locationId}>
+              {address.name + ", " + address.area}
             </option>
           ))}
         </select>
@@ -146,9 +157,8 @@ const Form = () => {
           Message <span className='text-red-500'>*</span>
         </label>
         <textarea
-          className={`appearance-none border ${
-            errors.message ? 'border-red-500' : 'border-gray-300'
-          } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+          className={`appearance-none border ${errors.message ? 'border-red-500' : 'border-gray-300'
+            } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
           id="message"
           name="message"
           rows="4"
