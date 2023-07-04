@@ -49,19 +49,34 @@ const DUMMY_DATA = [
 const page = async () => {
   const DATA = await getWebsiteData();
 
-  return (
-    <>
-      <section className='normal mt-16 flex flex-col'>
-        <h2 className='text-4xl font-semibold'>Review Us</h2>
-        <p className='text-xl mt-4'>If you enjoyed your visit to one of our restaurants, please leave us a review!</p>
+  const returnGoogleAtFrontArr = (reviewTypes) => {
+    // Find the index of the "google" type
+    const googleIndex = reviewTypes.findIndex((item) => item.type === "google");
 
-        {DUMMY_DATA.map((location, i) => (
+    // Move the "google" type to the beginning of the array
+    if (googleIndex > 0) {
+      const googleType = reviewTypes.splice(googleIndex, 1)[0];
+      reviewTypes.unshift(googleType);
+    }
+
+    return reviewTypes;
+  }
+
+
+
+  return (
+    <div className='min-h-screen w-screen bg-secondary pt-12'>
+      <section className='normal bg-primary flex flex-col'>
+        <h2 className='text-4xl font-semibold'>Review Us</h2>
+        <p className='text-xl mt-4'>If you enjoyed your visit to our restaurant, please leave us a review!</p>
+
+        {DATA.reviewOptions.map((location, i) => (
           <>
-            <div className='mt-8'>
+            <div className='mt-12'>
               <h2 className='text-3xl font-semibold'>{location.location}</h2>
               <div className='flex flex-col md:flex-row w-full mt-4 items-center'>
-                {location.reviewTypes.map((e, i) => (
-                  <Link href={e.link}>
+                {returnGoogleAtFrontArr(location.reviewTypes).map((e, i) => (
+                  <Link href={e.url || ""}>
                     <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4'>
                       <Image src={LOGO_MAP[e.type]} width={150} />
                     </div>
@@ -77,7 +92,7 @@ const page = async () => {
       </section>
 
       <Footer DATA={DATA} />
-    </>
+    </div>
   )
 }
 

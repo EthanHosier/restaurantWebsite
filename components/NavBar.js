@@ -80,7 +80,10 @@ const Navbar = ({DATA}) => {
                 <div className='flex justify-center shadow'>
                     <div className='flex justify-between items-center p-4 md:px-8 lg:px-12 max-w-7xl flex-1'>
                         <Link href={"/"}>
-                            {<img src={DATA.logo} fill className="w-20 md:w-28" alt='Logo' />}
+                            {/*<img src={DATA.logo} className="w-20 md:w-28" alt='Logo' />*/}
+                            <div className='relative w-20 md:w-28 h-8 md:h-12'>
+                                <Image src={DATA.logo} fill className='object-contain' alt='Logo'/>
+                            </div>
                         </Link>
                         <div className='hidden md:flex flex-1 justify-around max-w-2xl'>
                             {DATA.navOptions.map((p, i) => {

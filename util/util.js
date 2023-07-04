@@ -51,6 +51,7 @@ export async function getWebsiteData() {
   signedData.emails = [];
   signedData.delivery = false;
   signedData.pickup = false;
+  signedData.reviewOptions = []
 
   locationSnapshot.forEach((doc) => {
     const location = doc.data();
@@ -97,9 +98,14 @@ export async function getWebsiteData() {
     }
     signedData.addresses.push(address);
 
-
     //email
     signedData.emails.push(location.contactEmail)
+
+    //review options:
+    signedData.reviewOptions.push({
+      location: `${location.name}, ${location.location}`,
+      reviewTypes: location.reviewOptions,
+    })
   })
 
 
