@@ -6,7 +6,7 @@ const USER_UUID = process.env.WEBSITE_UUID;
 
 const getDeepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
-const generateGetUrl = (img) => {
+export const generateGetUrl = (img) => {
   const url = `https://firebasestorage.googleapis.com/v0/b/management-restaurants.appspot.com/o/${img.replace(/\//g, "%2F")}?alt=media`
   return url;
 }
@@ -105,6 +105,11 @@ export async function getWebsiteData() {
     })
   })
 
+
+  //overwrite book url if required.
+  if(!signedData.useExternalBookingSystem){
+    signedData.bookUrl = "/book"
+  }
 
   //now build other general site info
   signedData.navOptions = []
