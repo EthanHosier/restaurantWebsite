@@ -2,6 +2,12 @@ import Footer from '@/components/Footer'
 import { getWebsiteData } from '@/util/util';
 import React from 'react'
 
+export const revalidate = process.env.REVALIDATE_SECS;
+
+export const metadata = {
+  title: `BOOK - ${process.env.RESTAURANT_NAME}`,
+}
+
 const page = async() => {
   const DATA = await getWebsiteData();
 

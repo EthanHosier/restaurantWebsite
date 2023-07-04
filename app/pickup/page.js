@@ -4,7 +4,11 @@ import { getWebsiteData } from '@/util/util'
 
 import PickupDeliveryPage from '@/components/PickupDeliveryPage'
 
-export const revalidate = 3600 * 3 // revalidate every 3 hours
+export const revalidate = process.env.REVALIDATE_SECS // revalidate every 3 hours
+
+export const metadata = {
+  title: `PICKUP - ${process.env.RESTAURANT_NAME}`, 
+}
 
 const page = async () => {
 

@@ -13,7 +13,7 @@ import Link from 'next/link'
 import PhotoGallery from '@/components/PhotoGallery';
 import { getWebsiteData } from '@/util/util';
 
-export const revalidate = 3600 * 3 // revalidate every 3 hours
+export const revalidate = process.env.REVALIDATE_SECS // revalidate every 3 hours
 
 const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo }
 

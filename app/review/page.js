@@ -10,8 +10,11 @@ import { getWebsiteData } from '@/util/util';
 
 const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo }
 
-export const revalidate = 3600 * 3 // revalidate every 3 hours
+export const revalidate = process.env.REVALIDATE_SECS // revalidate every 3 hours
 
+export const metadata = {
+  title: `REVIEW - ${process.env.RESTAURANT_NAME}`, 
+}
 
 const DUMMY_DATA = [
   {
