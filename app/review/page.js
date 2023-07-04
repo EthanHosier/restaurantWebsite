@@ -71,21 +71,28 @@ const page = async () => {
         <p className='text-xl mt-4'>If you enjoyed your visit to our restaurant, please leave us a review!</p>
 
         {DATA.reviewOptions.map((location, i) => (
-          <>
-            <div className='mt-12'>
-              <h2 className='text-3xl font-semibold'>{location.location}</h2>
-              <div className='flex flex-col md:flex-row w-full mt-4 items-center'>
-                {returnGoogleAtFrontArr(location.reviewTypes).map((e, i) => (
-                  <Link href={e.url || ""}>
-                    <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4'>
-                      <Image src={LOGO_MAP[e.type]} width={150} />
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
 
-            {i < DUMMY_DATA.length - 1 && <div className='w-full h-[1px] bg-gray-200 mt-8' />}
+          <>
+
+            {location.reviewTypes.length > 0 &&
+              <>
+                {i > 0 && <div className='w-full h-[1px] bg-gray-200 mt-12' />}
+                <div className='mt-12'>
+                  <h2 className='text-3xl font-semibold'>{location.location}</h2>
+                  <div className='flex flex-col md:flex-row w-full mt-4 items-center'>
+                    {returnGoogleAtFrontArr(location.reviewTypes).map((e, i) => (
+                      <Link href={e.url || ""}>
+                        <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4'>
+                          <Image src={LOGO_MAP[e.type]} width={150} />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+
+              </>
+            }
           </>
         ))}
 
