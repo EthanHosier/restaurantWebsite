@@ -29,7 +29,7 @@ export async function getWebsiteData() {
   }
 
   data.images.forEach((img, i) => {
-    if(img){
+    if (img) {
       signedData.images[i] = generateGetUrl(img);
     } else {
       signedData.images[i] = ""
@@ -37,7 +37,7 @@ export async function getWebsiteData() {
   })
 
   Object.keys(data.backgrounds).forEach((key) => {
-    if(data.backgrounds[key]){
+    if (data.backgrounds[key]) {
       signedData.backgrounds[key] = generateGetUrl(data.backgrounds[key]);
     } else {
       signedData.backgrounds[key] = "";
@@ -97,7 +97,7 @@ export async function getWebsiteData() {
     }
     signedData.addresses.push(address);
 
-  
+
     //review options:
     signedData.reviewOptions.push({
       location: `${location.name}, ${location.location}`,
@@ -113,20 +113,12 @@ export async function getWebsiteData() {
   signedData.navOptions.push({
     "name": "Menus",
     "url": "",
-    "dropdownOptions": [
+    "dropdownOptions": signedData.menus.map((menu) => (
       {
-        "name": "Menu 1",
-        "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
-      },
-      {
-        "name": "Menu 2",
-        "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
-      },
-      {
-        "name": "Menu 3",
-        "url": "https://www.redbamboo-nyc.com/_files/ugd/9fbf96_5d1e8c36b35749288d5cba920b1c229d.pdf?index=true"
+        name: menu.name,
+        url: generateGetUrl(menu.url),
       }
-    ]
+    )),
   })
 
   if (signedData.delivery) {
@@ -145,12 +137,14 @@ export async function getWebsiteData() {
     })
   }
 
-  //always add these next two (FOR NOW)
-  signedData.navOptions.push({
-    "name": "Gift Cards",
-    "url": "/giftcards",
-    "dropdownOptions": []
-  })
+  if (signedData.offerGiftCards) {
+    signedData.navOptions.push({
+      "name": "Gift Cards",
+      "url": signedData.giftCardUrl,
+      "dropdownOptions": []
+    })
+  }
+
 
   signedData.navOptions.push({
     "name": "Contact Us",
@@ -212,7 +206,7 @@ export const getOpeningTimesArrays = (timesObj) => {
     openingTimes.push(`${toTitleCase(currentStart)}: ${convertTo12HourFormat(timesObj[currentStart].open)}-${convertTo12HourFormat(timesObj[currentStart].close)}`);
   } else {
     openingTimes.push(`${toTitleCase(currentStart)} - ${toTitleCase(currentEnd)}: ${convertTo12HourFormat(timesObj[currentEnd].open)}-${convertTo12HourFormat(timesObj[currentEnd].close)}`);
-    
+
   }
 
   return openingTimes;
