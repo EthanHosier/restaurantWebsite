@@ -11,8 +11,9 @@ const Footer = ({DATA}) => {
                 <div className='flex flex-wrap gap-6'>
                     {DATA.addresses.map((a, i) => (
                         <div className='justify-start text-start text-xs md:text-sm'>
-                            <h3 className='font-semibold text-sm md:text-md'>{a.area}</h3>
+                            <h3 className='font-semibold text-sm md:text-md'>{a.name}</h3>
                             <p>{a.address}</p>
+                            <p>{a.area}</p>
                             <a href={`tel:${a.phone.replace(/\s/g, '')}`} className="underline">{a.phone}</a>
                             <h4 className='font-semibold mt-3'>Opening times</h4>
                             
@@ -38,8 +39,8 @@ const Footer = ({DATA}) => {
                                 );
                             })}
                         </div>
-                        {DATA.emails.map((e, i) => (
-                            <p key={i}>Email: {e}</p>
+                        {DATA.addresses.map((e, i) => (
+                            <p key={i}>Email: {e.email}</p>
                         ))}
 
                     </div>
