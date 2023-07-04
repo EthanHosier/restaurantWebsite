@@ -19,6 +19,7 @@ const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo 
 
 export default async function Home() {
 
+  
   const DATA = await getWebsiteData();
 
   return (
