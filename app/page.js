@@ -13,13 +13,13 @@ import Link from 'next/link'
 import PhotoGallery from '@/components/PhotoGallery';
 import { getWebsiteData } from '@/util/util';
 
-export const revalidate = process.env.REVALIDATE_SECS 
+export const revalidate = 3600 * 3 
 
 const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo }
 
 export default async function Home() {
 
-  
+
   const DATA = await getWebsiteData();
 
   return (

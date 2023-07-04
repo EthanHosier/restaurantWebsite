@@ -2,7 +2,7 @@ import Footer from '@/components/Footer'
 import { getWebsiteData } from '@/util/util';
 import React from 'react'
 
-export const revalidate = process.env.REVALIDATE_SECS;
+export const revalidate = 3600 * 3;
 
 export const metadata = {
   title: `BOOK - ${process.env.RESTAURANT_NAME}`,
