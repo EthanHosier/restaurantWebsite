@@ -31,7 +31,8 @@ export default async function Home() {
           <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true}/>
         </div>
         {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
-
+        <p>rs: {process.env.REVALIDATE_SECS}</p>
+        <p>name: {process.env.RESTAURANT_NAME}</p>
       </section>
 
       {/* Brief info section */}
