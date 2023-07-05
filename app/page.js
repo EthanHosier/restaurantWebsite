@@ -25,8 +25,8 @@ export default async function Home() {
     <>
       {/* Logo Section */}
       <section className='parallax relative'>
-        {/*<Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
-        <div className='bg-black background opacity-10' />*/}
+        {/*<Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />*/}
+        <div className='bg-black background opacity-10' />
 
           <div className='w-2/3 h-1/4 relative flex flex-col'>
             <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} />
