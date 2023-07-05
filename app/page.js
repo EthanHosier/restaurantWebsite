@@ -57,6 +57,7 @@ export default async function Home() {
           <div className='flex flex-col max-w-6xl flex-1 md:flex-row justify-around md:justify-between items-center gap-4'>
             {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
             {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
+            {BOOK_A_TABLE()}
           </div>
         </div>
 
