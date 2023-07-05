@@ -13,7 +13,7 @@ import Link from 'next/link'
 import PhotoGallery from '@/components/PhotoGallery';
 import { getWebsiteData } from '@/util/util';
 
-export const revalidate = process.env.REVALIDATE_SECS 
+export const revalidate = process.env.REVALIDATE_SECS
 
 const LOGO_MAP = { tripadvisor: Tripadvisor, google: GoogleLogo, yelp: YelpLogo }
 
@@ -27,11 +27,16 @@ export default async function Home() {
       <section className='parallax relative'>
         <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
         <div className='bg-black background opacity-10' />
-        <div className='w-2/3 h-1/4 relative flex flex-col'>
-          <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true}/>
+
+        <div className='h-full w-full flex flex-col items-center justify-center z-3'>
+          <div className='w-2/3 h-1/4 relative flex flex-col'>
+            <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} />
+          </div>
+          {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
+          {BOOK_A_TABLE()}
         </div>
-        {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
-        {BOOK_A_TABLE()}
+
+
       </section>
 
       {/* Brief info section */}
@@ -40,7 +45,7 @@ export default async function Home() {
           {DATA.infoTitle && <h2 className='text-2xl font-bold mb-8'>{DATA.infoTitle}</h2>}
           {DATA.infoText && <p className='mb-16 md:text-xl'>{DATA.infoText}</p>}
           {DATA.bookUrl && BOOK_A_TABLE()}
-        
+
         </div>
       </section>
 
@@ -126,11 +131,10 @@ export default async function Home() {
 const BOOK_A_TABLE = () => {
   return (
     <>
-    <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self" } className='z-10'><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLE</p></Link>
-    <button className='bg-red-200 hover:bg-red-500'>yeah</button>
+      <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self"} className='z-10'><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLE</p></Link>
     </>
-  
-    )
+
+  )
 }
 
 
