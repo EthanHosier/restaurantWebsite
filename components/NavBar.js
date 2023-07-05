@@ -96,9 +96,9 @@ const Navbar = ({DATA}) => {
                                                     <div className='dropdown-container '>
                                                         <div className='dropdown-contents bg-primary shadow-xl whitespace-nowrap'>
                                                             {p.dropdownOptions.map((d, i) => (
-                                                                <a href={p.url + d.url} target='_blank' key={i}>
+                                                                <Link href={p.url + d.url} target='_blank' key={i}>
                                                                     <p className=''>{d.name}</p>
-                                                                </a>
+                                                                </Link>
                                                             ))}
                                                         </div>
                                                     </div>
@@ -106,7 +106,7 @@ const Navbar = ({DATA}) => {
 
                                                 :
 
-                                                <Link href={p.url}>
+                                                <Link href={p.url} target={p.name.toLowerCase() === "gift cards" ? "_blank": "_self"}>
                                                     <p className='text-tprimary uppercase'>{p.name}</p>
                                                 </Link>
                                         }
@@ -114,7 +114,7 @@ const Navbar = ({DATA}) => {
                                 )
                             })}
                         </div>
-                        <Link href={DATA.bookUrl}>
+                        <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self" }>
                             <p className='bg-accent rounded text-ttertiary p-3 px-4 text-sm hidden md:block font-semibold'>
                                 BOOK A TABLE
                             </p>

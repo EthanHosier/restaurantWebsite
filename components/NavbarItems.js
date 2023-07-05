@@ -82,7 +82,7 @@ const Navbar = ({ isToggled, close, DATA }) => {
                                             <p className="text-center text-3xl my-1 ml-2">{item.name}</p>
                                         </div>
                                         {!!activeOptions[i] && item.dropdownOptions.map((d, j) => (
-                                            <Link key={j} href={item.url + d.url} onClick={close}>
+                                            <Link key={j} href={item.url + d.url} target="_blank" /*IF EXTEND OPTIONS HERE ADD LOGIC FOR TARGET = _BLANK*/>
                                                 <p className="text-center">{d.name}</p>
                                             </Link>
                                         ))}
@@ -90,7 +90,7 @@ const Navbar = ({ isToggled, close, DATA }) => {
 
                                     :
 
-                                    <Link href={item.url} onClick={close}>
+                                    <Link href={item.url} onClick={close} target={item.name.toLowerCase() === "gift cards" ? "_blank": "_self"}>
                                         <p className="text-center text-3xl my-4">{item.name}</p>
                                     </Link>
                                 }
@@ -105,7 +105,7 @@ const Navbar = ({ isToggled, close, DATA }) => {
                         <div>
 
                         </div>
-                        <Link href={DATA.bookUrl} onClick={close}>
+                        <Link href={DATA.bookUrl} onClick={close} target={DATA.useExternalBookingSystem ? "_blank" : "_self" }>
                             <div className="bg-accent rounded-md p-4 px-7 text-ttertiary font-semibold text-xl">
                                 BOOK A TABLE
                             </div>
