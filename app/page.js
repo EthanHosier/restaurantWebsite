@@ -28,11 +28,14 @@ export default async function Home() {
         <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
         <div className='bg-black background opacity-10' />
 
+        <div className='normal h-full flex flex-col'>
           <div className='w-2/3 h-1/4 relative flex flex-col'>
             <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} />
           </div>
           {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
-          {BOOK_A_TABLE()}
+        </div>
+
+
 
 
       </section>
@@ -53,13 +56,11 @@ export default async function Home() {
 
         <div className='bg-black opacity-20 background' />
         <div className=' h-full flex flex-col md:justify-around'>
-        {BOOK_A_TABLE()}
 
           {(DATA.pickup || DATA.delivery) && <h1 className='text-tsecondary'>{DATA.pickup && "Pick-up"}{DATA.pickup && DATA.delivery && " & "}{DATA.delivery && "Delivery"}</h1>}
           <div className='flex flex-col max-w-6xl flex-1 md:flex-row justify-around md:justify-between items-center gap-4'>
             {DATA.pickup && pickupDeliveryBtn({ type: "pick-up" })}
             {DATA.delivery && pickupDeliveryBtn({ type: "delivery" })}
-            {BOOK_A_TABLE()}
           </div>
         </div>
 
