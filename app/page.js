@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <>
       {/* Logo Section */}
-      <section className='parallax h-full w-full relative'>
+      <section className='parallax relative'>
         <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
         <div className='bg-black background opacity-10' />
 
@@ -34,10 +34,6 @@ export default async function Home() {
           </div>
           {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
         </div>
-
-
-
-
       </section>
 
       {/* Brief info section */}
