@@ -40,7 +40,7 @@ export default async function Home() {
           {DATA.infoTitle && <h2 className='text-2xl font-bold mb-8'>{DATA.infoTitle}</h2>}
           {DATA.infoText && <p className='mb-16 md:text-xl'>{DATA.infoText}</p>}
           {DATA.bookUrl && BOOK_A_TABLE()}
-
+        
         </div>
       </section>
 
@@ -125,9 +125,17 @@ export default async function Home() {
 
 const BOOK_A_TABLE = () => {
   return (
+    <>
     <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self" } className='z-10'><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLE</p></Link>
-  )
+    <button className='bg-red-200 hover:bg-red-500'>yeah</button>
+    </>
+  
+    )
 }
+
+
+
+
 
 const pickupDeliveryBtn = ({ type }) => {
   return (
