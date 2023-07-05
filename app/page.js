@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <>
       {/* Logo Section */}
-      <section className='parallax relative'>
+      <section className='normal h-full w-full relative'>
         <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
         <div className='bg-black background opacity-10' />
 
