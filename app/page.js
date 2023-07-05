@@ -25,16 +25,14 @@ export default async function Home() {
     <>
       {/* Logo Section */}
       <section className='parallax relative'>
-        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
-        <div className='bg-black background opacity-10' />
+        {/*<Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
+        <div className='bg-black background opacity-10' />*/}
 
-        <div className='absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center z-5'>
           <div className='w-2/3 h-1/4 relative flex flex-col'>
             <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} />
           </div>
           {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
           {BOOK_A_TABLE()}
-        </div>
 
 
       </section>
@@ -131,7 +129,7 @@ export default async function Home() {
 const BOOK_A_TABLE = () => {
   return (
     <>
-      <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLEsx</p></Link>
+      <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLEs</p></Link>
     </>
 
   )
