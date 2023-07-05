@@ -96,9 +96,9 @@ const Navbar = ({DATA}) => {
                                                     <div className='dropdown-container '>
                                                         <div className='dropdown-contents bg-primary shadow-xl whitespace-nowrap'>
                                                             {p.dropdownOptions.map((d, i) => (
-                                                                <Link href={p.url + d.url} key={i}>
+                                                                <a href={p.url + d.url} target='_blank' key={i}>
                                                                     <p className=''>{d.name}</p>
-                                                                </Link>
+                                                                </a>
                                                             ))}
                                                         </div>
                                                     </div>
