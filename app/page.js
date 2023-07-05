@@ -129,7 +129,7 @@ export default async function Home() {
 const BOOK_A_TABLE = () => {
   return (
     <>
-      <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLEssw</p></Link>
+      <Link href={DATA.bookUrl} target={DATA.useExternalBookingSystem ? "_blank" : "_self"}><p className='bg-accent rounded text-ttertiary p-4 px-7 text-xl font-semibold uppercase w-40 md:w-64 md:-mt-44 inline'>BOOK A TABLEsswx</p></Link>
     </>
 
   )
