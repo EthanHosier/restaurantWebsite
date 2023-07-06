@@ -85,7 +85,7 @@ const Navbar = ({DATA}) => {
                                 <Image src={DATA.logo} fill className='object-contain' alt='Logo'/>
                             </div>
                         </Link>
-                        <div className='hidden md:flex flex-1 justify-around max-w-2xl'>
+                        <div className='hidden md:flex flex-1 justify-around max-w-2xl md:text-sm lg:text-base'>
                             {DATA.navOptions.map((p, i) => {
                                 return (
                                     <div className='dropdown' key={i}>
