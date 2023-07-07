@@ -18,7 +18,7 @@ const PhotoGallery = ({ DATA }) => {
   return (
     <div className='flex-wrap flex justify-center gap-2'>
       {DATA.images.map((src, i) => (
-        <div className='w-1/3 aspect-square relative extra-images'>
+        <div className='w-1/3 aspect-square relative extra-images skeleton-loading'>
           <Image src={src} key={i} onClick={() => onClick(i)} className="object-cover cursor-pointer" fill alt={`restaurant image ${i}`} />
         </div>
       ))}
