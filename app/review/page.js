@@ -84,7 +84,7 @@ const page = async () => {
                   <h2 className='text-3xl font-semibold'>{location.location}</h2>
                   <div className='flex flex-col md:flex-row w-full mt-4 items-center'>
                     {returnGoogleAtFrontArr(location.reviewTypes).map((e, i) => (
-                      <Link href={e.url || ""} target='_blank' prefetch={false} rel='norefferer'>
+                      <Link href={e.url || ""} target='_blank'>
                         <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4 mt-2'>
                           <Image src={LOGO_MAP[e.type]} width={150} />
                         </div>
