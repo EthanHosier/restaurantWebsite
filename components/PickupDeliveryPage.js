@@ -38,7 +38,7 @@ const PickupDeliveryPage = async ({DATA, type}) => {
 
                         {
                           <div className='flex-1 flex w-56 md:w-5/6 max-w-2xl items-center justify-center'>
-                          <Link href={d.url} className="flex items-center justify-center md:my-4">
+                          <Link href={d.url} target='_blank' className="flex items-center justify-center md:my-4">
                             <Image src={LOGO_MAP[d.type]} style={{ width: "360px", height: "auto" }} className="w-3/4 h-auto" alt={`${d.type} logo`} />
                           </Link>
                         </div>
