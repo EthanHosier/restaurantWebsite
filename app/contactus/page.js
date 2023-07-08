@@ -6,7 +6,6 @@ import Form from '@/components/Form'
 import { getWebsiteData } from '@/util/util'
 import Image from 'next/image'
 
-export const revalidate = process.env.REVALIDATE_SECS 
 
 export const metadata = {
     title: `CONTACT US - ${process.env.RESTAURANT_NAME}`,

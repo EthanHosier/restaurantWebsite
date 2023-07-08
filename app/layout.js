@@ -14,7 +14,7 @@ export const metadata = {
   }
 }
 
-export const revalidate = process.env.REVALIDATE_SECS 
+export const revalidate = 10800;
 
 export default async function RootLayout({ children }) {
 
