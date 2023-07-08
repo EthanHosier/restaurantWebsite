@@ -35,7 +35,7 @@ export default async function Home() {
       </section>
 
       {/* Brief info section */}
-      <section className='normal text-center flex flex-col px-4 py-16 bg-primary'>
+      <section className='normal text-center flex flex-col px-4 py-16 bg-primary text-tprimary'>
         <div className='max-w-6xl px-4'>
           {DATA.infoTitle && <h2 className='text-2xl font-bold mb-8'>{DATA.infoTitle}</h2>}
           {DATA.infoText && <p className='mb-16 md:text-xl'>{DATA.infoText}</p>}
@@ -58,10 +58,11 @@ export default async function Home() {
           </div>
         </div>
 
+
       </section>
 
       {/* Reviews section */}
-      <section className='normal text-center flex bg-primary'>
+      <section className='normal text-center flex bg-primary text-tprimary'>
         <div className='max-w-6xl flex flex-col sm:flex-row gap-y-16'>
           {DATA.reviews.map((d, i) => (
             <div className='flex flex-col items-center justify-center flex-1'>

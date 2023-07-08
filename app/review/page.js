@@ -68,7 +68,7 @@ const page = async () => {
 
 
   return (
-    <div className='min-h-screen w-screen bg-secondary pt-12'>
+    <div className='min-h-screen w-screen bg-secondary text-tprimary pt-12'>
       <section className='normal bg-primary flex flex-col'>
         <h2 className='text-4xl font-semibold'>Review Us</h2>
         <p className='text-xl mt-4'>If you enjoyed your visit to our restaurant, please leave us a review!</p>
@@ -85,7 +85,7 @@ const page = async () => {
                   <div className='flex flex-col md:flex-row w-full mt-4 items-center'>
                     {returnGoogleAtFrontArr(location.reviewTypes).map((e, i) => (
                       <Link href={e.url || ""} target='_blank'>
-                        <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4 mt-2'>
+                        <div className='p-4 flex items-center justify-center h-48 rounded-full shadow-lg mx-4 mt-2 bg-opacity-10 bg-white aspect-square'>
                           <Image src={LOGO_MAP[e.type]} width={150} />
                         </div>
                       </Link>

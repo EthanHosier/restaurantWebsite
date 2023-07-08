@@ -76,7 +76,7 @@ const Navbar = ({DATA}) => {
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-screen bg-primary transition-transform duration-300 ease-in-out z-10 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <nav className={`fixed top-0 left-0 w-screen bg-primary transition-transform duration-300 ease-in-out z-10 text-tprimary ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <div className='flex justify-center shadow'>
                     <div className='flex justify-between items-center p-4 md:px-8 lg:px-12 max-w-7xl flex-1'>
                         <Link href={"/"}>
@@ -120,7 +120,7 @@ const Navbar = ({DATA}) => {
                             </p>
                         </Link>
                         <div className={`md:hidden z-10 right-4 ${isFullScreenNavVisible ? "fixed" : "absolute"}`}>
-                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} color={DATA.colors.PrimaryTextCol} />
+                            <Hamburger toggled={isFullScreenNavVisible} toggle={setisFullScreenNavVisible} color={DATA.colors.secondaryTextCol} />
                         </div>
                     </div>
                 </div>

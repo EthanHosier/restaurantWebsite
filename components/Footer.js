@@ -54,7 +54,7 @@ const Footer = ({DATA}) => {
                     ))}
                 </div>
                 <p className='text-xs md:text-sm mt-4'>© {DATA.name} - All Rights Reserved</p>
-                <p className='text-xs md:text-sm mb-16'>Website by <a href='https://hosirestaurants.com' className='underline'>Hosi Restaurants</a></p>
+                <p className='text-xs md:text-sm mb-16'>Website by <a href='https://hosirestaurants.com' className='underline' target="_blank">Hosi Restaurants</a></p>
             </footer>
         </>
     )

@@ -82,7 +82,7 @@ const Form = ({ DATA }) => {
     <form className="mx-auto max-w-md" onSubmit={handleSubmit}>
       <div className="flex mb-4">
         <div className="w-1/2 mr-1">
-          <label className="block text-gray-700 text-sm  mb-2" htmlFor="firstName">
+          <label className="block text-tprimary text-sm  mb-2" htmlFor="firstName">
             First Name <span className='text-red-500'>*</span>
           </label>
           <input
@@ -99,7 +99,7 @@ const Form = ({ DATA }) => {
           )}
         </div>
         <div className="w-1/2 ml-1">
-          <label className="block text-gray-700 text-sm  mb-2" htmlFor="lastName">
+          <label className="block text-tprimary text-sm  mb-2" htmlFor="lastName">
             Last Name <span className='text-red-500'>*</span>
           </label>
           <input
@@ -117,7 +117,7 @@ const Form = ({ DATA }) => {
         </div>
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm  mb-2" htmlFor="email">
+        <label className="block text-tprimary text-sm  mb-2" htmlFor="email">
           Email <span className='text-red-500'>*</span>
         </label>
         <input
@@ -132,7 +132,7 @@ const Form = ({ DATA }) => {
         {errors.email && <p className="text-red-500 text-xs italic">{errors.email}</p>}
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm  mb-2" htmlFor="location">
+        <label className="block text-tprimary text-sm  mb-2" htmlFor="location">
           Restaurant Location <span className='text-red-500'>*</span>
         </label>
         <select
@@ -153,7 +153,7 @@ const Form = ({ DATA }) => {
         {errors.location && <p className="text-red-500 text-xs italic">{errors.location}</p>}
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm  mb-2" htmlFor="message">
+        <label className="block text-tprimary text-sm  mb-2" htmlFor="message">
           Message <span className='text-red-500'>*</span>
         </label>
         <textarea

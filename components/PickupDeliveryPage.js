@@ -24,7 +24,7 @@ const PickupDeliveryPage = async ({DATA, type}) => {
 
 
       {/*Order selection section*/}
-      <section className='normal text-center flex bg-primary' id='order-options'>
+      <section className='normal text-center flex bg-primary text-tprimary' id='order-options'>
         <div className='max-w-6xl flex flex-col px-4 gap-y-16 w-full'>
           {DATA[`${type}Options`].map((location, i) => (
             <>
