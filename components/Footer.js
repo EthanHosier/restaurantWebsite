@@ -33,7 +33,7 @@ const Footer = ({DATA}) => {
                                 const IconComponent = iconsMap[type];
 
                                 return (
-                                    <Link href={url} key={i} className="bg-black p-1 rounded-full aspect-square flex items-center justify-center">
+                                    <Link href={url} key={i} className="bg-black p-1 rounded-full aspect-square flex items-center justify-center" target='_blank'>
                                         <IconComponent className="text-tsecondary aspect-square w-4" />
                                     </Link>
                                 );

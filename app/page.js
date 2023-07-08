@@ -109,7 +109,7 @@ export default async function Home() {
               const IconComponent = iconsMap[type];
 
               return (
-                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square">
+                <Link href={url} key={i} className="bg-accent p-2 rounded-full aspect-square" target='_blank'>
                   <IconComponent className="text-ttertiary" />
                 </Link>
               );
