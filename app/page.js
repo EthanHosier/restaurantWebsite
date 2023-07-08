@@ -25,11 +25,11 @@ export default async function Home() {
     <>
       {/* Logo Section */}
       <section className='parallax relative'>
-        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} />
+        <Image src={DATA.backgrounds.logoSection} className="background" alt='logo section background' fill priority={true} unoptimized={true} />
         <div className='bg-black background opacity-10' />
 
           <div className='w-2/3 h-1/4 relative flex flex-col'>
-            <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} />
+            <Image src={DATA.logo} fill className="object-contain opacity-0 animate-fade-in" priority={true} unoptimized={true}/>
           </div>
           {DATA.bookUrl && <span className='mt-20 -mb-20'>{BOOK_A_TABLE()}</span>}
       </section>
@@ -65,9 +65,9 @@ export default async function Home() {
         <div className='max-w-6xl flex flex-col sm:flex-row gap-y-16'>
           {DATA.reviews.map((d, i) => (
             <div className='flex flex-col items-center justify-center flex-1'>
-              <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2'>
+              <div className='flex-1 flex w-20 md:w-1/3 items-center mb-2 rounded-full'>
                 <Link href={d.link}>
-                  <Image src={LOGO_MAP[d.source]} alt={`${d.source} logo`} style={{ width: "full", height: "auto" }} priority={true} />
+                  <Image src={LOGO_MAP[d.source]} alt={`${d.source} logo`} style={{ width: "full", height: "auto" }} />
 
                 </Link>
               </div>
