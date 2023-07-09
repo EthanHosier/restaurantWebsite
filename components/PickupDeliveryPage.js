@@ -46,7 +46,7 @@ const PickupDeliveryPage = async ({DATA, type}) => {
                         }
 
                         <Link href={d.url}>
-                          <p className="bg-accent text-ttertiary p-3 rounded text-xl font-semibold my-4">Delivery via {toTitleCase(d.type)}</p>
+                          <p className="bg-accent text-ttertiary p-3 rounded text-xl font-semibold my-4">{toTitleCase(type)} via {toTitleCase(d.type)}</p>
                         </Link>
                       </div>
                     ))
