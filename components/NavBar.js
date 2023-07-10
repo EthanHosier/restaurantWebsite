@@ -73,6 +73,7 @@ const Navbar = ({DATA}) => {
         });
     };
 
+    
 
     return (
         <>
