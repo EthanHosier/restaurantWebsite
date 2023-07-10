@@ -17,7 +17,7 @@ const PickupDeliveryPage = async ({DATA, type}) => {
     <>
       {/* Deliver - ... section*/}
       <section className='parallax pickup-delivery-parallax-section flex-col items-center justify-center'>
-        <Image src={DATA.backgrounds[type]} fill className="background" alt='extra booking section background' priority={true} unoptimized={true}/>
+        <Image src={DATA.backgrounds[type]} fill className="background" alt='extra booking section background' priority={true} />
         <div className='bg-black background opacity-20' />
         <h1 className='text-tsecondary text-center md:mb-20 mt-20'>{toTitleCase(type)}</h1>
       </section>
