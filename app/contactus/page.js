@@ -17,7 +17,7 @@ const page = async () => {
     return (
         <>
             <section className='parallax pickup-delivery-parallax-section flex-col'>
-                <Image src={DATA.backgrounds.contactUs} fill unoptimized={true} priority={true} className="background" alt='extra booking section background' />
+                <Image src={DATA.backgrounds.contactUs} fill  priority={true} className="background" alt='extra booking section background' />
                 <div className='bg-black background opacity-20' />
                 <h1 className='text-tsecondary text-center mt-20'>Contact Us</h1>
             </section>
