@@ -82,7 +82,7 @@ const Navbar = ({DATA}) => {
                         <Link href={"/"}>
                             {/*<img src={DATA.logo} className="w-20 md:w-28" alt='Logo' />*/}
                             <div className='relative w-20 md:w-28 h-8 md:h-12'>
-                                <Image src={DATA.logo} fill className='object-contain' alt='Logo'/>
+                                <Image src={DATA.logo} fill className='object-contain' alt='Logo' priority={true}/>
                             </div>
                         </Link>
                         <div className='hidden md:flex flex-1 justify-around max-w-2xl md:text-sm lg:text-base'>
