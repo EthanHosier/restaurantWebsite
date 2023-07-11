@@ -33,7 +33,7 @@ export default async function RootLayout({ children }) {
           "--primaryTextCol": DATA.colors.primaryTextCol,
         }}>
         <NavBar DATA={DATA} />
-        <main className='cont bg-primary' id="parallaxContainer">
+        <main className='cont bg-secondary' id="parallaxContainer">
           {children}
         </main>
       </body>
